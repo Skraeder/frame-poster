@@ -2,13 +2,15 @@
   --bg: #f4f1eb;
   --bg-soft: #fbfaf7;
   --ink: #111111;
-  --muted: #69645d;
+  --muted: #68635c;
   --line: rgba(17, 17, 17, 0.12);
-  --dark: #141414;
+  --dark: #111111;
   --card: #ffffff;
-  --accent: #a8744f;
-  --accent-dark: #805639;
-  --sand: #ded3c4;
+  --accent: #b3261e;
+  --accent-dark: #8f1f19;
+  --sand: #d8c8b8;
+  --blue-gray: #8fa4a6;
+  --charcoal: #2b2b2b;
   --shadow: 0 24px 60px rgba(17, 17, 17, 0.10);
   --radius-lg: 28px;
   --radius-md: 18px;
@@ -1065,5 +1067,186 @@ h3 {
 
   .bottom-card {
     bottom: 38px;
+  }
+}
+
+
+/* === FRAME POSTER EDITORIAL V2 === */
+body {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(179, 38, 30, 0.07), transparent 28%),
+    radial-gradient(circle at 90% 18%, rgba(143, 164, 166, 0.12), transparent 28%),
+    var(--bg);
+}
+
+.nav-menu a:hover {
+  color: var(--accent-dark);
+}
+
+.header-cta:hover,
+.btn-primary:hover,
+.buy-button:hover {
+  background: var(--accent-dark);
+}
+
+.benefit-icon,
+.step-card span,
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.hero-visual {
+  background:
+    linear-gradient(135deg, rgba(17, 17, 17, 0.96), rgba(43, 43, 43, 0.88) 56%, rgba(179, 38, 30, 0.82) 56%, rgba(244, 241, 235, 0.98)),
+    url("assets/ruta-silenciosa.jpg") center/cover no-repeat;
+}
+
+.poster-art,
+.category-visual,
+.product-image {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.art-line {
+  background-image: url("assets/sol-quieto.jpg") !important;
+}
+
+.art-arch {
+  background-image: url("assets/concreto-azul.jpg") !important;
+}
+
+.art-abstract {
+  background-image: url("assets/serie-sello.jpg") !important;
+}
+
+.art-line span,
+.art-arch::after,
+.product-city::after,
+.visual-arch::after {
+  display: none !important;
+}
+
+.editorial-strip {
+  width: 100%;
+  background: var(--dark);
+  color: #fff;
+  padding: 28px max(18px, calc((100vw - var(--max-width)) / 2));
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.editorial-strip div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.editorial-strip span {
+  color: var(--sand);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  font-weight: 900;
+}
+
+.editorial-strip p {
+  margin: 0;
+  max-width: 650px;
+  color: rgba(255,255,255,0.72);
+  text-align: right;
+}
+
+.category-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.visual-minimal {
+  background-image: url("assets/sol-quieto.jpg") !important;
+}
+
+.visual-arch {
+  background-image: url("assets/concreto-azul.jpg") !important;
+}
+
+.visual-editorial {
+  background-image: url("assets/noche-grafica.jpg") !important;
+}
+
+.visual-auto {
+  background-image: url("assets/carrera-tinta.jpg") !important;
+}
+
+.visual-limited {
+  background-image: url("assets/serie-sello.jpg") !important;
+}
+
+.product-line {
+  background-image: url("assets/sol-quieto.jpg") !important;
+}
+
+.product-city {
+  background-image: url("assets/concreto-azul.jpg") !important;
+}
+
+.product-rhythm {
+  background-image: url("assets/noche-grafica.jpg") !important;
+}
+
+.product-white {
+  background-image: url("assets/manifiesto-visual.jpg") !important;
+}
+
+.product-shadow {
+  background-image: url("assets/serie-sello.jpg") !important;
+}
+
+.product-horizon {
+  background-image: url("assets/carrera-tinta.jpg") !important;
+}
+
+.product-description {
+  min-height: 72px;
+}
+
+.avatar-angulo {
+  background: var(--blue-gray);
+}
+
+.avatar-lab {
+  background: var(--accent);
+}
+
+.how-it-works {
+  background:
+    linear-gradient(rgba(17, 17, 17, 0.92), rgba(17, 17, 17, 0.92)),
+    url("assets/ruta-silenciosa.jpg") center/cover no-repeat;
+}
+
+.how-it-works .eyebrow {
+  color: var(--sand);
+}
+
+@media (max-width: 1120px) {
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-strip div {
+    display: block;
+  }
+
+  .editorial-strip p {
+    text-align: left;
+    margin-top: 10px;
   }
 }

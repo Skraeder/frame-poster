@@ -6,7 +6,7 @@
   <title>FRAME POSTER | Posters decorativos y arte impreso</title>
   <meta
     name="description"
-    content="Frame Poster es un marketplace de posters decorativos y arte impreso para transformar tu espacio con menos búsqueda y mejores decisiones."
+    content="Frame Poster es un marketplace editorial de posters decorativos, arte impreso y piezas visuales para transformar espacios con menos búsqueda y mejores decisiones."
   />
   <meta name="author" content="FRAME POSTER" />
   <meta name="theme-color" content="#111111" />
@@ -41,7 +41,7 @@
   <main>
     <section class="hero section-pad" aria-labelledby="hero-title">
       <div class="hero-content">
-        <p class="eyebrow">Marketplace de posters decorativos</p>
+        <p class="eyebrow">Marketplace editorial de posters</p>
         <h1 id="hero-title">Menos opciones. Mejores decisiones.</h1>
         <p class="hero-text">
           Posters y arte impreso para transformar tu espacio sin perderte entre miles de opciones.
@@ -68,14 +68,14 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="Composición visual de posters">
+      <div class="hero-visual" aria-label="Composición visual editorial de posters">
         <div class="gallery-wall">
           <article class="poster-card poster-card-large">
             <div class="poster-art art-line">
               <span></span>
             </div>
             <div class="poster-info">
-              <p>Línea Serena</p>
+              <p>Sol Quieto</p>
               <small>$349 MXN</small>
             </div>
           </article>
@@ -83,19 +83,26 @@
           <article class="poster-card poster-card-small top-card">
             <div class="poster-art art-arch"></div>
             <div class="poster-info">
-              <p>Ciudad Fragmentada</p>
-              <small>Arquitectónico</small>
+              <p>Concreto Azul</p>
+              <small>Arquitectura</small>
             </div>
           </article>
 
           <article class="poster-card poster-card-small bottom-card">
             <div class="poster-art art-abstract"></div>
             <div class="poster-info">
-              <p>Ritmo Abstracto</p>
-              <small>Visual Lab</small>
+              <p>Serie Sello</p>
+              <small>Edición limitada</small>
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="editorial-strip" aria-label="Frase editorial de marca">
+      <div>
+        <span>POSTERS / DISEÑO / ESPACIO</span>
+        <p>Una galería digital para elegir piezas visuales con más claridad y menos ruido.</p>
       </div>
     </section>
 
@@ -143,29 +150,38 @@
 
       <div class="category-grid">
         <article class="category-card">
-          <div class="category-visual visual-minimal" role="img" aria-label="Poster minimalista en pared"></div>
+          <div class="category-visual visual-minimal" role="img" aria-label="Poster minimalista japonés"></div>
           <div>
-            <h3>Minimalista</h3>
-            <p>Líneas limpias, espacios ligeros y composiciones sobrias.</p>
-            <a href="#catalogo" class="text-link" data-filter-link="Minimalista">Ver colección</a>
+            <h3>Minimalista japonés</h3>
+            <p>Composiciones limpias, textura de papel y acentos visuales precisos.</p>
+            <a href="#catalogo" class="text-link" data-filter-link="Minimalista japonés">Ver colección</a>
           </div>
         </article>
 
         <article class="category-card">
-          <div class="category-visual visual-abstract" role="img" aria-label="Poster abstracto decorativo"></div>
+          <div class="category-visual visual-arch" role="img" aria-label="Poster de arquitectura brutalista"></div>
           <div>
-            <h3>Abstracto</h3>
-            <p>Formas, color y movimiento para espacios con más energía visual.</p>
-            <a href="#catalogo" class="text-link" data-filter-link="Abstracto">Ver colección</a>
+            <h3>Arquitectura brutalista</h3>
+            <p>Edificios, geometría, ciudad y presencia visual con carácter.</p>
+            <a href="#catalogo" class="text-link" data-filter-link="Arquitectura brutalista">Ver colección</a>
           </div>
         </article>
 
         <article class="category-card">
-          <div class="category-visual visual-arch" role="img" aria-label="Poster arquitectónico"></div>
+          <div class="category-visual visual-editorial" role="img" aria-label="Poster editorial gráfico"></div>
           <div>
-            <h3>Arquitectónico</h3>
-            <p>Ciudad, estructura, geometría y detalles que ordenan el espacio.</p>
-            <a href="#catalogo" class="text-link" data-filter-link="Arquitectónico">Ver colección</a>
+            <h3>Editorial gráfico</h3>
+            <p>Tipografía, contraste y composición de revista para paredes con actitud.</p>
+            <a href="#catalogo" class="text-link" data-filter-link="Editorial gráfico">Ver colección</a>
+          </div>
+        </article>
+
+        <article class="category-card">
+          <div class="category-visual visual-auto" role="img" aria-label="Poster automotive editorial"></div>
+          <div>
+            <h3>Automotive posters</h3>
+            <p>Velocidad, diseño, textura impresa y estética automotriz de colección.</p>
+            <a href="#catalogo" class="text-link" data-filter-link="Automotive posters">Ver colección</a>
           </div>
         </article>
 
@@ -173,7 +189,7 @@
           <div class="category-visual visual-limited" role="img" aria-label="Poster edición limitada"></div>
           <div>
             <h3>Edición limitada</h3>
-            <p>Piezas con pocas unidades para paredes que buscan algo diferente.</p>
+            <p>Piezas con pocas unidades, diseñadas para destacar sin saturar el espacio.</p>
             <a href="#catalogo" class="text-link" data-filter-link="Edición limitada">Ver colección</a>
           </div>
         </article>
@@ -193,21 +209,23 @@
 
       <div class="filter-bar" aria-label="Filtros de productos">
         <button class="filter-btn active" data-filter="Todos">Todos</button>
-        <button class="filter-btn" data-filter="Minimalista">Minimalista</button>
-        <button class="filter-btn" data-filter="Abstracto">Abstracto</button>
-        <button class="filter-btn" data-filter="Arquitectónico">Arquitectónico</button>
+        <button class="filter-btn" data-filter="Minimalista japonés">Minimalista japonés</button>
+        <button class="filter-btn" data-filter="Arquitectura brutalista">Arquitectura brutalista</button>
+        <button class="filter-btn" data-filter="Editorial gráfico">Editorial gráfico</button>
+        <button class="filter-btn" data-filter="Tipográfico">Tipográfico</button>
+        <button class="filter-btn" data-filter="Automotive posters">Automotive posters</button>
         <button class="filter-btn" data-filter="Edición limitada">Edición limitada</button>
       </div>
 
       <div class="product-grid" id="productGrid">
-        <article class="product-card" data-category="Minimalista">
+        <article class="product-card" data-category="Minimalista japonés">
           <div class="badge">Nuevo</div>
-          <div class="product-image product-line" role="img" aria-label="Poster Línea Serena"></div>
+          <div class="product-image product-line" role="img" aria-label="Poster Sol Quieto"></div>
           <div class="product-content">
-            <p class="product-category">Minimalista</p>
-            <h3>Poster “Línea Serena”</h3>
+            <p class="product-category">Minimalista japonés</p>
+            <h3>Poster “Sol Quieto”</h3>
             <p class="seller">Por Estudio Norte</p>
-            <p class="product-description">Una pieza limpia para dar equilibrio visual a espacios modernos.</p>
+            <p class="product-description">Composición limpia con textura de papel, acento rojo y una sensación visual tranquila para espacios ordenados.</p>
             <div class="price-row">
               <strong>$349 MXN</strong>
             </div>
@@ -216,14 +234,14 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="Arquitectónico">
+        <article class="product-card" data-category="Arquitectura brutalista">
           <div class="badge">Más vendido</div>
-          <div class="product-image product-city" role="img" aria-label="Poster Ciudad Fragmentada"></div>
+          <div class="product-image product-city" role="img" aria-label="Poster Concreto Azul"></div>
           <div class="product-content">
-            <p class="product-category">Arquitectónico</p>
-            <h3>Poster “Ciudad Fragmentada”</h3>
+            <p class="product-category">Arquitectura brutalista</p>
+            <h3>Poster “Concreto Azul”</h3>
             <p class="seller">Por Casa Ángulo</p>
-            <p class="product-description">Composición urbana con líneas, bloques y ritmo visual.</p>
+            <p class="product-description">Poster arquitectónico con edificio brutalista, cielo suave y tipografía editorial de alto impacto.</p>
             <div class="price-row">
               <strong>$429 MXN</strong>
             </div>
@@ -232,14 +250,14 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="Abstracto">
+        <article class="product-card" data-category="Editorial gráfico">
           <div class="badge">Pocas piezas</div>
-          <div class="product-image product-rhythm" role="img" aria-label="Poster Ritmo Abstracto"></div>
+          <div class="product-image product-rhythm" role="img" aria-label="Poster Noche Gráfica"></div>
           <div class="product-content">
-            <p class="product-category">Abstracto</p>
-            <h3>Poster “Ritmo Abstracto”</h3>
+            <p class="product-category">Editorial gráfico</p>
+            <h3>Poster “Noche Gráfica”</h3>
             <p class="seller">Por Visual Lab</p>
-            <p class="product-description">Formas suaves y contraste visual para espacios creativos.</p>
+            <p class="product-description">Pieza de contraste fuerte con formas negras, bloques rojos y estética japonesa contemporánea.</p>
             <div class="price-row">
               <strong>$389 MXN</strong>
             </div>
@@ -248,14 +266,14 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="Minimalista">
+        <article class="product-card" data-category="Tipográfico">
           <div class="badge">Nuevo</div>
-          <div class="product-image product-white" role="img" aria-label="Poster Silencio en Blanco"></div>
+          <div class="product-image product-white" role="img" aria-label="Poster Manifiesto Visual"></div>
           <div class="product-content">
-            <p class="product-category">Minimalista</p>
-            <h3>Poster “Silencio en Blanco”</h3>
+            <p class="product-category">Tipográfico</p>
+            <h3>Poster “Manifiesto Visual”</h3>
             <p class="seller">Por Aura Studio</p>
-            <p class="product-description">Una pieza sobria para paredes limpias, tranquilas y luminosas.</p>
+            <p class="product-description">Poster tipográfico para estudios, oficinas o espacios creativos donde el diseño tiene presencia.</p>
             <div class="price-row">
               <strong>$319 MXN</strong>
             </div>
@@ -266,12 +284,12 @@
 
         <article class="product-card" data-category="Edición limitada">
           <div class="badge">Edición limitada</div>
-          <div class="product-image product-shadow" role="img" aria-label="Poster Forma y Sombra"></div>
+          <div class="product-image product-shadow" role="img" aria-label="Poster Serie Sello"></div>
           <div class="product-content">
             <p class="product-category">Edición limitada</p>
-            <h3>Poster “Forma y Sombra”</h3>
+            <h3>Poster “Serie Sello”</h3>
             <p class="seller">Por Marco Cero</p>
-            <p class="product-description">Contraste elegante para espacios que necesitan un punto focal.</p>
+            <p class="product-description">Composición modular inspirada en sellos gráficos, símbolos japoneses y contraste rojo, negro y blanco.</p>
             <div class="price-row">
               <strong>$499 MXN</strong>
             </div>
@@ -280,14 +298,14 @@
           </div>
         </article>
 
-        <article class="product-card" data-category="Abstracto">
+        <article class="product-card" data-category="Automotive posters">
           <div class="badge">Pocas piezas</div>
-          <div class="product-image product-horizon" role="img" aria-label="Poster Horizonte Interior"></div>
+          <div class="product-image product-horizon" role="img" aria-label="Poster Carrera en Tinta"></div>
           <div class="product-content">
-            <p class="product-category">Abstracto</p>
-            <h3>Poster “Horizonte Interior”</h3>
+            <p class="product-category">Automotive posters</p>
+            <h3>Poster “Carrera en Tinta”</h3>
             <p class="seller">Por Punto Visual</p>
-            <p class="product-description">Color contenido y formas suaves para dar profundidad al espacio.</p>
+            <p class="product-description">Poster automotriz con textura editorial, composición tipo revista y contraste en blanco y negro.</p>
             <div class="price-row">
               <strong>$459 MXN</strong>
             </div>
@@ -312,7 +330,7 @@
       <div class="artist-grid">
         <article class="artist-card">
           <div class="artist-avatar avatar-norte">EN</div>
-          <p class="artist-specialty">Posters minimalistas</p>
+          <p class="artist-specialty">Minimalista japonés</p>
           <h3>Estudio Norte</h3>
           <p>Diseños limpios para espacios modernos, sobrios y equilibrados.</p>
           <div class="artist-meta">
@@ -323,7 +341,7 @@
 
         <article class="artist-card">
           <div class="artist-avatar avatar-angulo">CA</div>
-          <p class="artist-specialty">Arte arquitectónico</p>
+          <p class="artist-specialty">Arquitectura brutalista</p>
           <h3>Casa Ángulo</h3>
           <p>Piezas inspiradas en ciudad, líneas, estructura y composición visual.</p>
           <div class="artist-meta">
@@ -334,7 +352,7 @@
 
         <article class="artist-card">
           <div class="artist-avatar avatar-lab">VL</div>
-          <p class="artist-specialty">Arte abstracto</p>
+          <p class="artist-specialty">Editorial gráfico</p>
           <h3>Visual Lab</h3>
           <p>Composiciones visuales para espacios creativos con más personalidad.</p>
           <div class="artist-meta">
@@ -441,7 +459,7 @@
             <option>Posters decorativos</option>
             <option>Ilustración digital</option>
             <option>Fotografía impresa</option>
-            <option>Arte abstracto</option>
+            <option>Editorial gráfico</option>
             <option>Otro</option>
           </select>
         </label>
