@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+<rect width="900" height="1200" fill="#8FA4A6"/>
+<circle cx="690" cy="250" r="145" fill="#F4F1EB" opacity="0.96"/>
+<rect x="66" y="760" width="760" height="18" fill="#F4F1EB"/>
+<rect x="66" y="820" width="460" height="18" fill="#111111" opacity="0.9"/>
+<text x="54" y="500" font-family="Arial" font-size="84" font-weight="900" fill="#111111" letter-spacing="-3">TORRE</text>
+<text x="54" y="610" font-family="Arial" font-size="84" font-weight="900" fill="#111111" letter-spacing="-3">SILENCIOSA</text>
+<text x="54" y="1060" font-family="Arial" font-size="26" font-weight="700" fill="#111111" opacity="0.64">FRAME POSTER / EDITORIAL SERIES</text>
+</svg>
