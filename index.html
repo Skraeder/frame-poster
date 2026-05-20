@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FRAME POSTER | Marketplace de posters decorativos y arte impreso</title>
-  <meta name="description" content="FRAME POSTER es un marketplace editorial de posters decorativos, arte impreso, posters japoneses, posters automotrices y decoración de interiores preparado para integrarse con Shopify." />
+  <title>FRAME POSTER | Marketplace editorial de posters decorativos</title>
+  <meta name="description" content="FRAME POSTER es un marketplace editorial de posters decorativos, arte impreso, posters japoneses, posters automotrices y piezas visuales para decoración de interiores." />
   <meta name="theme-color" content="#111111" />
   <meta property="og:title" content="FRAME POSTER | Marketplace editorial de posters" />
-  <meta property="og:description" content="Explora posters decorativos, arte impreso, posters editoriales, japoneses, automotrices y edición limitada en una experiencia visual lista para Shopify." />
+  <meta property="og:description" content="Posters decorativos, arte impreso y colecciones visuales para transformar espacios." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://frame-poster.vercel.app" />
   <link rel="stylesheet" href="styles.css" />
@@ -16,7 +16,11 @@
   <header class="site-header" id="inicio">
     <nav class="navbar" aria-label="Navegación principal">
       <a href="#inicio" class="logo" aria-label="FRAME POSTER inicio">FRAME <span>POSTER</span></a>
-      <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+
+      <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
       <ul class="nav-menu" id="navMenu">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#catalogo">Catálogo</a></li>
@@ -24,60 +28,96 @@
         <li><a href="#compra-segura">Compra segura</a></li>
         <li><a href="#marketing">Marketing</a></li>
         <li><a href="#operacion">Operación</a></li>
-        <li><a href="#analytics">Analytics</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="#vende">Vende con nosotros</a></li>
       </ul>
+
       <div class="header-actions">
         <a href="#catalogo" class="header-cta">Explorar posters</a>
-        <a href="https://wa.me/525520891454" target="_blank" rel="noopener noreferrer" class="header-whatsapp" data-track="whatsapp">WhatsApp</a>
+        <a href="https://wa.me/525520891454" class="header-whatsapp" target="_blank" rel="noopener noreferrer" data-track="whatsapp">WhatsApp</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero section-pad" aria-labelledby="hero-title">
+    <section class="hero section-pad">
       <div class="hero-content">
-        <p class="eyebrow">Marketplace editorial de posters decorativos</p>
-        <h1 id="hero-title">Menos opciones. Mejores decisiones.</h1>
+        <p class="eyebrow">Marketplace editorial de posters</p>
+        <h1>Menos opciones. Mejores decisiones.</h1>
         <p class="hero-text">Posters y arte impreso para transformar tu espacio sin perderte entre miles de opciones.</p>
         <div class="hero-actions">
           <a href="#catalogo" class="btn btn-primary">Explorar catálogo</a>
           <a href="#vende" class="btn btn-secondary">Vende tu arte</a>
-          <a href="https://wa.me/525520891454" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" data-track="whatsapp">Contactar por WhatsApp</a>
+          <a href="https://wa.me/525520891454" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-track="whatsapp">Contactar por WhatsApp</a>
         </div>
-        <div class="hero-stats" aria-label="Resumen del proyecto">
-          <div><strong>20 posters</strong><span>catálogo organizado por colección</span></div>
-          <div><strong>Shopify-ready</strong><span>preparado para Buy Button y checkout</span></div>
-          <div><strong>GA4 + Shopify</strong><span>métricas sugeridas para seguimiento</span></div>
+        <div class="hero-stats">
+          <div><strong>20 posters</strong><span>organizados por colección visual</span></div>
+          <div><strong>5 estilos</strong><span>para elegir con intención</span></div>
+          <div><strong>Shopify</strong><span>preparado para carrito y checkout</span></div>
         </div>
       </div>
-      <div class="hero-visual" aria-label="Composición editorial de posters destacados">
-        <article class="hero-poster hero-main"><span style="background-image:url('assets/sol-quieto.jpg')" role="img" aria-label="Poster Sol Naciente"></span><p>Sol Naciente</p></article>
-        <article class="hero-poster hero-side"><span style="background-image:url('assets/concreto-azul.jpg')" role="img" aria-label="Poster Residential Brutalism"></span><p>Residential Brutalism</p></article>
-        <article class="hero-poster hero-bottom"><span style="background-image:url('assets/stamp-series.jpg')" role="img" aria-label="Poster Japanese Stamp Series"></span><p>Japanese Stamp Series</p></article>
+
+      <div class="hero-visual" aria-label="Composición visual de posters">
+        <div class="gallery-wall">
+          <article class="poster-card poster-card-large">
+            <div class="poster-art" style="background-image:url('assets/sol-quieto.jpg')" role="img" aria-label="Poster Sol Naciente"></div>
+            <div class="poster-info"><p>Sol Naciente</p><small>$349 MXN</small></div>
+          </article>
+          <article class="poster-card poster-card-small top-card">
+            <div class="poster-art" style="background-image:url('assets/concreto-azul.jpg')" role="img" aria-label="Poster Residential Brutalism"></div>
+            <div class="poster-info"><p>Residential Brutalism</p><small>Arquitectura</small></div>
+          </article>
+          <article class="poster-card poster-card-small bottom-card">
+            <div class="poster-art" style="background-image:url('assets/stamp-series.jpg')" role="img" aria-label="Poster Japanese Stamp Series"></div>
+            <div class="poster-info"><p>Japanese Stamp Series</p><small>Edición limitada</small></div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="editorial-strip" aria-label="Frase editorial"><span>POSTERS / ARTE IMPRESO / DECORACIÓN DE INTERIORES</span><p>Una galería digital para explorar posters editoriales, japoneses, automotrices y de edición limitada con mayor claridad.</p></section>
-
-    <section class="value-section section-pad" aria-labelledby="value-title">
-      <div class="section-heading narrow"><p class="eyebrow">Propuesta de valor</p><h2 id="value-title">Una forma más clara de elegir posters para tu espacio.</h2><p>FRAME POSTER reduce la saturación visual y organiza piezas gráficas por colecciones, para que el usuario compare estilos, entienda la propuesta y pueda avanzar a compra mediante Shopify.</p></div>
-      <div class="feature-grid three"><article><span>01</span><h3>Catálogo visual</h3><p>Productos con imagen, precio, descripción y colección.</p></article><article><span>02</span><h3>Compra preparada</h3><p>Espacios listos para integrar Shopify Buy Button.</p></article><article><span>03</span><h3>Contacto directo</h3><p>WhatsApp e Instagram como canales de atención.</p></article></div>
+    <section class="editorial-strip">
+      <div><span>POSTERS / DISEÑO / ESPACIO</span><p>Una galería digital para elegir piezas visuales con más claridad y menos ruido.</p></div>
     </section>
 
-    <section class="palette-section section-pad" aria-labelledby="palette-title">
-      <div class="section-heading split"><div><p class="eyebrow">Identidad visual</p><h2 id="palette-title">La paleta visual de Frame Poster</h2></div><p>La identidad visual de Frame Poster usa pocos colores para que los posters respiren: blanco roto para dar aire, negro para contraste, rojo editorial para acentos y tonos neutros para mantener una experiencia limpia.</p></div>
-      <div class="palette-grid"><article><span style="background:#F4F1EB"></span><h3>Blanco roto</h3><p>#F4F1EB</p></article><article><span style="background:#FBFAF7"></span><h3>Fondo suave</h3><p>#FBFAF7</p></article><article><span style="background:#111111"></span><h3>Negro</h3><p>#111111</p></article><article><span style="background:#2B2B2B"></span><h3>Gris carbón</h3><p>#2B2B2B</p></article><article><span style="background:#B3261E"></span><h3>Rojo editorial</h3><p>#B3261E</p></article><article><span style="background:#D8C8B8"></span><h3>Arena</h3><p>#D8C8B8</p></article></div>
+    <section class="value-section section-pad">
+      <div class="section-heading narrow">
+        <p class="eyebrow">Propuesta de valor</p>
+        <h2>No necesitas ver mil posters para encontrar uno que sí va contigo.</h2>
+        <p>FRAME POSTER reúne posters decorativos y arte impreso en colecciones visuales claras para que puedas explorar, comparar y decidir mejor.</p>
+      </div>
+      <div class="feature-grid three">
+        <article><span>01</span><h3>Menos saturación</h3><p>El catálogo está organizado por intención visual, no por cientos de opciones repetidas.</p></article>
+        <article><span>02</span><h3>Compra preparada</h3><p>Cada producto conserva espacio listo para integrar Shopify Buy Button.</p></article>
+        <article><span>03</span><h3>Contacto directo</h3><p>WhatsApp e Instagram permiten resolver dudas antes de comprar o vender diseños.</p></article>
+      </div>
     </section>
 
-    <section class="categories section-pad" aria-labelledby="categories-title">
-      <div class="section-heading split"><div><p class="eyebrow">Categorías</p><h2 id="categories-title">Explora por colección</h2></div><p>Cada colección reúne cuatro posters para que el usuario pueda comparar, elegir y navegar con intención.</p></div>
-      <div class="category-grid">        <article class="category-card">
+    <section class="palette-section section-pad">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Identidad visual</p><h2>La paleta visual de Frame Poster</h2></div>
+        <p>La identidad visual usa pocos colores para que los posters respiren: blanco roto para dar aire, negro para contraste, rojo editorial para acentos y tonos neutros para mantener una experiencia limpia.</p>
+      </div>
+      <div class="palette-grid">
+        <article><span style="background:#F4F1EB"></span><h3>Blanco roto</h3><p>#F4F1EB</p></article>
+        <article><span style="background:#111111"></span><h3>Negro</h3><p>#111111</p></article>
+        <article><span style="background:#2B2B2B"></span><h3>Gris carbón</h3><p>#2B2B2B</p></article>
+        <article><span style="background:#B3261E"></span><h3>Rojo editorial</h3><p>#B3261E</p></article>
+        <article><span style="background:#D8C8B8"></span><h3>Arena</h3><p>#D8C8B8</p></article>
+        <article><span style="background:#8FA4A6"></span><h3>Azul grisáceo</h3><p>#8FA4A6</p></article>
+      </div>
+    </section>
+
+    <section class="categories section-pad">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Categorías</p><h2>Explora por colección</h2></div>
+        <p>Cada colección reúne varias piezas para que puedas escoger con una estética clara.</p>
+      </div>
+      <div class="category-grid">
+        <article class="category-card">
           <div class="category-visual" style="background-image:url('assets/sol-quieto.jpg')" role="img" aria-label="Colección Minimalista japonés"></div>
           <div>
             <h3>Minimalista japonés</h3>
-            <p>Composiciones limpias, textura de papel, cultura visual japonesa y acentos rojos.</p>
+            <p>Papel, silencio visual, símbolos japoneses y acentos rojos.</p>
             <a href="#catalogo" class="text-link" data-filter-link="Minimalista japonés">Ver colección</a>
           </div>
         </article>
@@ -85,15 +125,15 @@
           <div class="category-visual" style="background-image:url('assets/concreto-azul.jpg')" role="img" aria-label="Colección Arquitectura brutalista"></div>
           <div>
             <h3>Arquitectura brutalista</h3>
-            <p>Concreto, geometría, ciudad y atmósferas monumentales con carácter.</p>
+            <p>Concreto, escala, ciudad y composiciones de alto carácter.</p>
             <a href="#catalogo" class="text-link" data-filter-link="Arquitectura brutalista">Ver colección</a>
           </div>
         </article>
         <article class="category-card">
-          <div class="category-visual" style="background-image:url('assets/her_editorial.jpg')" role="img" aria-label="Colección Editorial gráfico"></div>
+          <div class="category-visual" style="background-image:url('assets/editorial_poster.jpg')" role="img" aria-label="Colección Editorial gráfico"></div>
           <div>
             <h3>Editorial gráfico</h3>
-            <p>Tipografía, contraste, mensajes visuales y composición tipo revista.</p>
+            <p>Tipografía, contraste, revista, cultura visual y composición.</p>
             <a href="#catalogo" class="text-link" data-filter-link="Editorial gráfico">Ver colección</a>
           </div>
         </article>
@@ -101,7 +141,7 @@
           <div class="category-visual" style="background-image:url('assets/ruta-silenciosa.jpg')" role="img" aria-label="Colección Automotive posters"></div>
           <div>
             <h3>Automotive posters</h3>
-            <p>Autos, pista, cultura automotriz y fotografía con energía editorial.</p>
+            <p>Autos, velocidad, diseño de pista y estética de colección.</p>
             <a href="#catalogo" class="text-link" data-filter-link="Automotive posters">Ver colección</a>
           </div>
         </article>
@@ -109,414 +149,509 @@
           <div class="category-visual" style="background-image:url('assets/stamp-series.jpg')" role="img" aria-label="Colección Edición limitada"></div>
           <div>
             <h3>Edición limitada</h3>
-            <p>Piezas coleccionables, gráficas y de alto impacto visual.</p>
+            <p>Piezas más gráficas, intensas y pensadas para destacar.</p>
             <a href="#catalogo" class="text-link" data-filter-link="Edición limitada">Ver colección</a>
           </div>
-        </article></div>
+        </article>
+      </div>
     </section>
 
-    <section class="products section-pad" id="catalogo" aria-labelledby="products-title">
-      <div class="section-heading split"><div><p class="eyebrow">Catálogo</p><h2 id="products-title">Catálogo de posters</h2></div><p>20 productos con imagen, precio, descripción y botón temporal listo para reemplazar por Shopify Buy Button.</p></div>
-      <div class="filter-bar" aria-label="Filtros del catálogo"><button class="filter-btn active" data-filter="Todos">Todos</button><button class="filter-btn" data-filter="Minimalista japonés">Minimalista japonés</button><button class="filter-btn" data-filter="Arquitectura brutalista">Arquitectura brutalista</button><button class="filter-btn" data-filter="Editorial gráfico">Editorial gráfico</button><button class="filter-btn" data-filter="Automotive posters">Automotive posters</button><button class="filter-btn" data-filter="Edición limitada">Edición limitada</button></div>
+    <section class="products section-pad" id="catalogo">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Catálogo</p><h2>Posters decorativos</h2></div>
+        <p>Explora posters editoriales, japoneses, automotrices y de arquitectura brutalista listos para integrarse a Shopify.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="Todos">Todos</button>
+        <button class="filter-btn" data-filter="Minimalista japonés">Minimalista japonés</button>
+        <button class="filter-btn" data-filter="Arquitectura brutalista">Arquitectura brutalista</button>
+        <button class="filter-btn" data-filter="Editorial gráfico">Editorial gráfico</button>
+        <button class="filter-btn" data-filter="Automotive posters">Automotive posters</button>
+        <button class="filter-btn" data-filter="Edición limitada">Edición limitada</button>
+      </div>
+
       <p class="catalog-status" id="catalogStatus">Mostrando todos los posters disponibles.</p>
-      <div class="product-grid" id="productGrid">        <article class="product-card" data-category="Minimalista japonés" data-product="Sol Naciente">
-          <div class="badge">Nuevo</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Sol Naciente">
-            <span class="product-image img-sol-naciente" role="img" aria-label="Poster Sol Naciente"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Minimalista japonés</p>
-            <h3>Poster “Sol Naciente”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Poster minimalista con textura de papel, símbolo solar rojo y composición limpia. Ideal para espacios tranquilos con estética japonesa.</p>
-            <div class="price-row"><strong>$349 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Sol Naciente">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Minimalista japonés" data-product="Tokyo Train">
-          <div class="badge">Más visto</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Tokyo Train">
-            <span class="product-image img-tokyo-train" role="img" aria-label="Poster Tokyo Train"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Minimalista japonés</p>
-            <h3>Poster “Tokyo Train”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Poster urbano inspirado en Japón, con tren, ciudad, bloques de color y energía visual moderna.</p>
-            <div class="price-row"><strong>$389 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Tokyo Train">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Minimalista japonés" data-product="Tokyo Asakusa">
-          <div class="badge">Nuevo</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Tokyo Asakusa">
-            <span class="product-image img-tokyo-asakusa" role="img" aria-label="Poster Tokyo Asakusa"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Minimalista japonés</p>
-            <h3>Poster “Tokyo Asakusa”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Pieza inspirada en arquitectura tradicional japonesa, con fotografía monocromática y tipografía roja de alto impacto.</p>
-            <div class="price-row"><strong>$429 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Tokyo Asakusa">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Minimalista japonés" data-product="Cat Japanese Poster">
-          <div class="badge">Pocas piezas</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Cat Japanese Poster">
-            <span class="product-image img-cat-japanese-poster" role="img" aria-label="Poster Cat Japanese Poster"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Minimalista japonés</p>
-            <h3>Poster “Cat Japanese Poster”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Ilustración gráfica de estética japonesa con textura vintage, rojo intenso y contraste negro.</p>
-            <div class="price-row"><strong>$329 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Cat Japanese Poster">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Arquitectura brutalista" data-product="Residential Brutalism">
-          <div class="badge">Más vendido</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Residential Brutalism">
-            <span class="product-image img-residential-brutalism" role="img" aria-label="Poster Residential Brutalism"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Arquitectura brutalista</p>
-            <h3>Poster “Residential Brutalism”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Poster arquitectónico con edificio brutalista, cielo dramático y composición editorial.</p>
-            <div class="price-row"><strong>$429 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Residential Brutalism">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Arquitectura brutalista" data-product="Brutalist Solitude">
-          <div class="badge">Edición corta</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Brutalist Solitude">
-            <span class="product-image img-brutalist-solitude" role="img" aria-label="Poster Brutalist Solitude"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Arquitectura brutalista</p>
-            <h3>Poster “Brutalist Solitude”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Imagen atmosférica con bloques de concreto, sombras profundas y sensación industrial.</p>
-            <div class="price-row"><strong>$459 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Brutalist Solitude">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Arquitectura brutalista" data-product="Brutalism Archive">
-          <div class="badge">Nuevo</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Brutalism Archive">
-            <span class="product-image img-brutalism-archive" role="img" aria-label="Poster Brutalism Archive"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Arquitectura brutalista</p>
-            <h3>Poster “Brutalism Archive”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Poster tipo archivo editorial con edificio brutalista, textura impresa y composición informativa.</p>
-            <div class="price-row"><strong>$409 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Brutalism Archive">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Arquitectura brutalista" data-product="Brutalist Passage">
-          <div class="badge">Pocas piezas</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Brutalist Passage">
-            <span class="product-image img-brutalist-passage" role="img" aria-label="Poster Brutalist Passage"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Arquitectura brutalista</p>
-            <h3>Poster “Brutalist Passage”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Composición arquitectónica monumental con sombras, escala y profundidad visual.</p>
-            <div class="price-row"><strong>$449 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Brutalist Passage">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Editorial gráfico" data-product="Oppenheimer Dreaming">
-          <div class="badge">Nuevo</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Oppenheimer Dreaming">
-            <span class="product-image img-oppenheimer-dreaming" role="img" aria-label="Poster Oppenheimer Dreaming"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Editorial gráfico</p>
-            <h3>Poster “Oppenheimer Dreaming”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Poster editorial en blanco y negro con figura masculina, tipografía vertical y mensaje de enfoque.</p>
-            <div class="price-row"><strong>$389 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Oppenheimer Dreaming">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Editorial gráfico" data-product="HER Editorial Poster">
-          <div class="badge">Más visto</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de HER Editorial Poster">
-            <span class="product-image img-her-editorial-poster" role="img" aria-label="Poster HER Editorial Poster"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Editorial gráfico</p>
-            <h3>Poster “HER Editorial Poster”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Composición en blanco y negro con rostro fragmentado, textura impresa y tipografía dominante.</p>
-            <div class="price-row"><strong>$379 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="HER Editorial Poster">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Editorial gráfico" data-product="Art Will Save Us">
-          <div class="badge">Nuevo</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Art Will Save Us">
-            <span class="product-image img-art-will-save-us" role="img" aria-label="Poster Art Will Save Us"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Editorial gráfico</p>
-            <h3>Poster “Art Will Save Us”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Poster tipográfico con mensaje directo y estética de revista. Ideal para espacios creativos.</p>
-            <div class="price-row"><strong>$319 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Art Will Save Us">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Editorial gráfico" data-product="Whiskey Japanese Poster">
-          <div class="badge">Edición corta</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Whiskey Japanese Poster">
-            <span class="product-image img-whiskey-japanese-poster" role="img" aria-label="Poster Whiskey Japanese Poster"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Editorial gráfico</p>
-            <h3>Poster “Whiskey Japanese Poster”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Diseño de alto contraste con formas rojas, negro profundo, vaso central y tipografía japonesa.</p>
-            <div class="price-row"><strong>$399 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Whiskey Japanese Poster">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Automotive posters" data-product="Porsche Concept Field">
-          <div class="badge">Nuevo</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Porsche Concept Field">
-            <span class="product-image img-porsche-concept-field" role="img" aria-label="Poster Porsche Concept Field"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Automotive posters</p>
-            <h3>Poster “Porsche Concept Field”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Imagen aspiracional con auto negro, campo dorado y composición limpia de estilo automotriz editorial.</p>
-            <div class="price-row"><strong>$449 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Porsche Concept Field">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Automotive posters" data-product="Ford Mustang Mach 1">
-          <div class="badge">Clásico</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Ford Mustang Mach 1">
-            <span class="product-image img-ford-mustang-mach-1" role="img" aria-label="Poster Ford Mustang Mach 1"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Automotive posters</p>
-            <h3>Poster “Ford Mustang Mach 1”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Poster monocromático con estética de anuncio vintage, tipografía grande y presencia clásica.</p>
-            <div class="price-row"><strong>$459 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Ford Mustang Mach 1">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Automotive posters" data-product="Liberty Walk Miura">
-          <div class="badge">Pocas piezas</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Liberty Walk Miura">
-            <span class="product-image img-liberty-walk-miura" role="img" aria-label="Poster Liberty Walk Miura"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Automotive posters</p>
-            <h3>Poster “Liberty Walk Miura”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Fotografía automotriz urbana con estética japonesa, detalles rojos y composición de alto impacto.</p>
-            <div class="price-row"><strong>$489 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Liberty Walk Miura">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Automotive posters" data-product="Porsche Daytona 24H">
-          <div class="badge">Más visto</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Porsche Daytona 24H">
-            <span class="product-image img-porsche-daytona-24h" role="img" aria-label="Poster Porsche Daytona 24H"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Automotive posters</p>
-            <h3>Poster “Porsche Daytona 24H”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Poster gráfico de pista con curvas rojas, autos en movimiento y estética de carrera.</p>
-            <div class="price-row"><strong>$469 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Porsche Daytona 24H">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Edición limitada" data-product="Japanese Stamp Series">
-          <div class="badge">Edición limitada</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Japanese Stamp Series">
-            <span class="product-image img-japanese-stamp-series" role="img" aria-label="Poster Japanese Stamp Series"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Edición limitada</p>
-            <h3>Poster “Japanese Stamp Series”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Composición modular inspirada en sellos japoneses, símbolos tradicionales y contraste rojo, negro y blanco.</p>
-            <div class="price-row"><strong>$499 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Japanese Stamp Series">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Edición limitada" data-product="Marty Supreme">
-          <div class="badge">Colección</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Marty Supreme">
-            <span class="product-image img-marty-supreme" role="img" aria-label="Poster Marty Supreme"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Edición limitada</p>
-            <h3>Poster “Marty Supreme”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Poster cinematográfico con retrato central, tipografía masiva y color naranja dominante.</p>
-            <div class="price-row"><strong>$529 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Marty Supreme">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Edición limitada" data-product="Red Dead Redemption 2">
-          <div class="badge">Colección</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Red Dead Redemption 2">
-            <span class="product-image img-red-dead-redemption-2" role="img" aria-label="Poster Red Dead Redemption 2"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Edición limitada</p>
-            <h3>Poster “Red Dead Redemption 2”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Composición oscura con rojo intenso, personaje central y estética de cartel dramático.</p>
-            <div class="price-row"><strong>$549 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Red Dead Redemption 2">Agregar al carrito</button>
-          </div>
-        </article>
-        <article class="product-card" data-category="Edición limitada" data-product="Porsche GT3RS">
-          <div class="badge">Edición limitada</div>
-          <button class="product-track" type="button" aria-label="Ver detalle de Porsche GT3RS">
-            <span class="product-image img-porsche-gt3rs" role="img" aria-label="Poster Porsche GT3RS"></span>
-          </button>
-          <div class="product-content">
-            <p class="product-category">Edición limitada</p>
-            <h3>Poster “Porsche GT3RS”</h3>
-            <p class="reference-line">Referencia visual / poster decorativo</p>
-            <p class="product-description">Poster automotriz con textura de impresión, composición tipo revista y alto contraste blanco y negro.</p>
-            <div class="price-row"><strong>$519 MXN</strong></div>
-            <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-            <button class="buy-button" type="button" data-product-name="Porsche GT3RS">Agregar al carrito</button>
-          </div>
-        </article></div>
+
+      <div class="product-grid" id="productGrid">
+          <article class="product-card" data-category="Minimalista japonés">
+            <div class="badge">Nuevo</div>
+            <button class="product-image" type="button" style="background-image:url('assets/sol-quieto.jpg')" aria-label="Ver poster Sol Naciente" data-track="producto:Sol Naciente"></button>
+            <div class="product-content">
+              <p class="product-category">Minimalista japonés</p>
+              <h3>Poster “Sol Naciente”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Poster minimalista con textura de papel, símbolo solar rojo y composición limpia. Ideal para espacios tranquilos con estética japonesa.</p>
+              <div class="price-row"><strong>$349 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Sol Naciente">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Minimalista japonés">
+            <div class="badge">Más visto</div>
+            <button class="product-image" type="button" style="background-image:url('assets/train_japanese.jpg')" aria-label="Ver poster Tokyo Train" data-track="producto:Tokyo Train"></button>
+            <div class="product-content">
+              <p class="product-category">Minimalista japonés</p>
+              <h3>Poster “Tokyo Train”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Poster urbano inspirado en Japón, con tren, ciudad, bloques de color y energía visual moderna.</p>
+              <div class="price-row"><strong>$389 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Tokyo Train">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Minimalista japonés">
+            <div class="badge">Nuevo</div>
+            <button class="product-image" type="button" style="background-image:url('assets/tokyo_japanese.jpg')" aria-label="Ver poster Tokyo Asakusa" data-track="producto:Tokyo Asakusa"></button>
+            <div class="product-content">
+              <p class="product-category">Minimalista japonés</p>
+              <h3>Poster “Tokyo Asakusa”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Pieza inspirada en arquitectura tradicional japonesa, con fotografía monocromática y tipografía roja de alto impacto.</p>
+              <div class="price-row"><strong>$429 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Tokyo Asakusa">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Minimalista japonés">
+            <div class="badge">Pocas piezas</div>
+            <button class="product-image" type="button" style="background-image:url('assets/cat_japanese.jpg')" aria-label="Ver poster Cat Japanese Poster" data-track="producto:Cat Japanese Poster"></button>
+            <div class="product-content">
+              <p class="product-category">Minimalista japonés</p>
+              <h3>Poster “Cat Japanese Poster”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Ilustración gráfica de estética japonesa con textura vintage, rojo intenso y contraste negro.</p>
+              <div class="price-row"><strong>$329 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Cat Japanese Poster">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Arquitectura brutalista">
+            <div class="badge">Más vendido</div>
+            <button class="product-image" type="button" style="background-image:url('assets/concreto-azul.jpg')" aria-label="Ver poster Residential Brutalism" data-track="producto:Residential Brutalism"></button>
+            <div class="product-content">
+              <p class="product-category">Arquitectura brutalista</p>
+              <h3>Poster “Residential Brutalism”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Poster arquitectónico con edificio brutalista, cielo dramático y composición editorial.</p>
+              <div class="price-row"><strong>$429 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Residential Brutalism">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Arquitectura brutalista">
+            <div class="badge">Edición corta</div>
+            <button class="product-image" type="button" style="background-image:url('assets/brutalist_solitude.jpeg')" aria-label="Ver poster Brutalist Solitude" data-track="producto:Brutalist Solitude"></button>
+            <div class="product-content">
+              <p class="product-category">Arquitectura brutalista</p>
+              <h3>Poster “Brutalist Solitude”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Imagen atmosférica con bloques de concreto, sombras profundas y sensación industrial.</p>
+              <div class="price-row"><strong>$459 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Brutalist Solitude">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Arquitectura brutalista">
+            <div class="badge">Nuevo</div>
+            <button class="product-image" type="button" style="background-image:url('assets/arquitecture_brutalism.jpg')" aria-label="Ver poster Brutalism Archive" data-track="producto:Brutalism Archive"></button>
+            <div class="product-content">
+              <p class="product-category">Arquitectura brutalista</p>
+              <h3>Poster “Brutalism Archive”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Poster tipo archivo editorial con edificio brutalista, textura impresa y composición informativa.</p>
+              <div class="price-row"><strong>$409 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Brutalism Archive">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Arquitectura brutalista">
+            <div class="badge">Pocas piezas</div>
+            <button class="product-image" type="button" style="background-image:url('assets/brutalim_arquitecture.jpeg')" aria-label="Ver poster Brutalist Passage" data-track="producto:Brutalist Passage"></button>
+            <div class="product-content">
+              <p class="product-category">Arquitectura brutalista</p>
+              <h3>Poster “Brutalist Passage”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Composición arquitectónica monumental con sombras, escala y profundidad visual.</p>
+              <div class="price-row"><strong>$449 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Brutalist Passage">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Editorial gráfico">
+            <div class="badge">Nuevo</div>
+            <button class="product-image" type="button" style="background-image:url('assets/editorial_poster.jpg')" aria-label="Ver poster Oppenheimer Dreaming" data-track="producto:Oppenheimer Dreaming"></button>
+            <div class="product-content">
+              <p class="product-category">Editorial gráfico</p>
+              <h3>Poster “Oppenheimer Dreaming”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Poster editorial en blanco y negro con figura masculina, tipografía vertical y mensaje de enfoque.</p>
+              <div class="price-row"><strong>$389 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Oppenheimer Dreaming">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Editorial gráfico">
+            <div class="badge">Más visto</div>
+            <button class="product-image" type="button" style="background-image:url('assets/her_editorial.jpg')" aria-label="Ver poster HER Editorial Poster" data-track="producto:HER Editorial Poster"></button>
+            <div class="product-content">
+              <p class="product-category">Editorial gráfico</p>
+              <h3>Poster “HER Editorial Poster”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Composición en blanco y negro con rostro fragmentado, textura impresa y tipografía dominante.</p>
+              <div class="price-row"><strong>$379 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:HER Editorial Poster">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Editorial gráfico">
+            <div class="badge">Nuevo</div>
+            <button class="product-image" type="button" style="background-image:url('assets/manifiesto-visual.jpg')" aria-label="Ver poster Art Will Save Us" data-track="producto:Art Will Save Us"></button>
+            <div class="product-content">
+              <p class="product-category">Editorial gráfico</p>
+              <h3>Poster “Art Will Save Us”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Poster tipográfico con mensaje directo y estética de revista. Ideal para espacios creativos.</p>
+              <div class="price-row"><strong>$319 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Art Will Save Us">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Editorial gráfico">
+            <div class="badge">Edición corta</div>
+            <button class="product-image" type="button" style="background-image:url('assets/noche-grafica.jpg')" aria-label="Ver poster Whiskey Japanese Poster" data-track="producto:Whiskey Japanese Poster"></button>
+            <div class="product-content">
+              <p class="product-category">Editorial gráfico</p>
+              <h3>Poster “Whiskey Japanese Poster”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Diseño de alto contraste con formas rojas, negro profundo, vaso central y tipografía japonesa.</p>
+              <div class="price-row"><strong>$399 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Whiskey Japanese Poster">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Automotive posters">
+            <div class="badge">Nuevo</div>
+            <button class="product-image" type="button" style="background-image:url('assets/ruta-silenciosa.jpg')" aria-label="Ver poster Porsche Concept Field" data-track="producto:Porsche Concept Field"></button>
+            <div class="product-content">
+              <p class="product-category">Automotive posters</p>
+              <h3>Poster “Porsche Concept Field”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Imagen aspiracional con auto negro, campo dorado y composición limpia de estilo automotriz editorial.</p>
+              <div class="price-row"><strong>$449 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Porsche Concept Field">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Automotive posters">
+            <div class="badge">Clásico</div>
+            <button class="product-image" type="button" style="background-image:url('assets/mustang_limited.jpg')" aria-label="Ver poster Ford Mustang Mach 1" data-track="producto:Ford Mustang Mach 1"></button>
+            <div class="product-content">
+              <p class="product-category">Automotive posters</p>
+              <h3>Poster “Ford Mustang Mach 1”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Poster monocromático con estética de anuncio vintage, tipografía grande y presencia clásica.</p>
+              <div class="price-row"><strong>$459 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Ford Mustang Mach 1">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Automotive posters">
+            <div class="badge">Pocas piezas</div>
+            <button class="product-image" type="button" style="background-image:url('assets/car_car.jpg')" aria-label="Ver poster Liberty Walk Miura" data-track="producto:Liberty Walk Miura"></button>
+            <div class="product-content">
+              <p class="product-category">Automotive posters</p>
+              <h3>Poster “Liberty Walk Miura”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Fotografía automotriz urbana con estética japonesa, detalles rojos y composición de alto impacto.</p>
+              <div class="price-row"><strong>$489 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Liberty Walk Miura">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Automotive posters">
+            <div class="badge">Más visto</div>
+            <button class="product-image" type="button" style="background-image:url('assets/car_daytona.jpg')" aria-label="Ver poster Porsche Daytona 24H" data-track="producto:Porsche Daytona 24H"></button>
+            <div class="product-content">
+              <p class="product-category">Automotive posters</p>
+              <h3>Poster “Porsche Daytona 24H”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Poster gráfico de pista con curvas rojas, autos en movimiento y estética de carrera.</p>
+              <div class="price-row"><strong>$469 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Porsche Daytona 24H">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Edición limitada">
+            <div class="badge">Edición limitada</div>
+            <button class="product-image" type="button" style="background-image:url('assets/stamp-series.jpg')" aria-label="Ver poster Japanese Stamp Series" data-track="producto:Japanese Stamp Series"></button>
+            <div class="product-content">
+              <p class="product-category">Edición limitada</p>
+              <h3>Poster “Japanese Stamp Series”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Composición modular inspirada en sellos japoneses, símbolos tradicionales y contraste rojo, negro y blanco.</p>
+              <div class="price-row"><strong>$499 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Japanese Stamp Series">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Edición limitada">
+            <div class="badge">Colección</div>
+            <button class="product-image" type="button" style="background-image:url('assets/marty_limited.jpg')" aria-label="Ver poster Marty Supreme" data-track="producto:Marty Supreme"></button>
+            <div class="product-content">
+              <p class="product-category">Edición limitada</p>
+              <h3>Poster “Marty Supreme”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Poster cinematográfico con retrato central, tipografía masiva y color naranja dominante.</p>
+              <div class="price-row"><strong>$529 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Marty Supreme">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Edición limitada">
+            <div class="badge">Colección</div>
+            <button class="product-image" type="button" style="background-image:url('assets/rdr2_limited.jpg')" aria-label="Ver poster Red Dead Redemption 2" data-track="producto:Red Dead Redemption 2"></button>
+            <div class="product-content">
+              <p class="product-category">Edición limitada</p>
+              <h3>Poster “Red Dead Redemption 2”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Composición oscura con rojo intenso, personaje central y estética de cartel dramático.</p>
+              <div class="price-row"><strong>$549 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Red Dead Redemption 2">Agregar al carrito</button>
+            </div>
+          </article>
+          <article class="product-card" data-category="Edición limitada">
+            <div class="badge">Edición limitada</div>
+            <button class="product-image" type="button" style="background-image:url('assets/carrera-tinta.jpg')" aria-label="Ver poster Porsche GT3RS" data-track="producto:Porsche GT3RS"></button>
+            <div class="product-content">
+              <p class="product-category">Edición limitada</p>
+              <h3>Poster “Porsche GT3RS”</h3>
+              <p class="reference-line">Referencia visual / poster decorativo</p>
+              <p class="product-description">Poster automotriz con textura de impresión, composición tipo revista y alto contraste blanco y negro.</p>
+              <div class="price-row"><strong>$519 MXN</strong></div>
+              <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+              <button class="buy-button" type="button" data-track="compra:Porsche GT3RS">Agregar al carrito</button>
+            </div>
+          </article>
+      </div>
     </section>
 
-    <section class="collections section-pad" id="colecciones" aria-labelledby="collections-title">
-      <div class="section-heading split"><div><p class="eyebrow">Colecciones</p><h2 id="collections-title">Colecciones visuales</h2></div><p>En esta primera versión, Frame Poster organiza sus piezas por líneas visuales. Los artistas y vendedores se integrarán conforme avance el marketplace.</p></div>
-      <div class="collection-grid">        <article class="collection-card">
+    <section class="collections section-pad" id="colecciones">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Colecciones</p><h2>Colecciones visuales</h2></div>
+        <p>En esta primera versión, Frame Poster organiza sus piezas por líneas visuales. Los artistas y vendedores se integrarán conforme avance el marketplace.</p>
+      </div>
+      <div class="collection-grid">
+        <article class="collection-card">
           <span>01</span>
           <h3>Minimalista japonés</h3>
-          <p>Composiciones limpias, textura de papel, cultura visual japonesa y acentos rojos. En esta línea, el catálogo se organiza para comparar estilos sin saturación visual.</p>
+          <p>Papel, silencio visual, símbolos japoneses y acentos rojos.</p>
           <a href="#catalogo" data-filter-link="Minimalista japonés">Ver colección</a>
         </article>
         <article class="collection-card">
           <span>02</span>
           <h3>Arquitectura brutalista</h3>
-          <p>Concreto, geometría, ciudad y atmósferas monumentales con carácter. En esta línea, el catálogo se organiza para comparar estilos sin saturación visual.</p>
+          <p>Concreto, escala, ciudad y composiciones de alto carácter.</p>
           <a href="#catalogo" data-filter-link="Arquitectura brutalista">Ver colección</a>
         </article>
         <article class="collection-card">
           <span>03</span>
           <h3>Editorial gráfico</h3>
-          <p>Tipografía, contraste, mensajes visuales y composición tipo revista. En esta línea, el catálogo se organiza para comparar estilos sin saturación visual.</p>
+          <p>Tipografía, contraste, revista, cultura visual y composición.</p>
           <a href="#catalogo" data-filter-link="Editorial gráfico">Ver colección</a>
         </article>
         <article class="collection-card">
           <span>04</span>
           <h3>Automotive posters</h3>
-          <p>Autos, pista, cultura automotriz y fotografía con energía editorial. En esta línea, el catálogo se organiza para comparar estilos sin saturación visual.</p>
+          <p>Autos, velocidad, diseño de pista y estética de colección.</p>
           <a href="#catalogo" data-filter-link="Automotive posters">Ver colección</a>
         </article>
         <article class="collection-card">
           <span>05</span>
           <h3>Edición limitada</h3>
-          <p>Piezas coleccionables, gráficas y de alto impacto visual. En esta línea, el catálogo se organiza para comparar estilos sin saturación visual.</p>
+          <p>Piezas más gráficas, intensas y pensadas para destacar.</p>
           <a href="#catalogo" data-filter-link="Edición limitada">Ver colección</a>
-        </article></div>
+        </article>
+      </div>
     </section>
 
-    <section class="safe-checkout section-pad" id="compra-segura" aria-labelledby="safe-title">
-      <div class="section-heading split"><div><p class="eyebrow">Checkout</p><h2 id="safe-title">Compra segura y checkout preparado con Shopify</h2></div><p>FRAME POSTER funciona como una experiencia visual tipo marketplace. La página permite explorar colecciones, comparar posters y preparar la compra. El carrito, pagos, inventario y procesamiento de órdenes se gestionarán mediante Shopify Buy Button.</p></div>
-      <div class="feature-grid four"><article><span>01</span><h3>Carrito y checkout</h3><p>Cada producto conserva un espacio listo para integrar Shopify Buy Button y finalizar la compra mediante Shopify.</p></article><article><span>02</span><h3>Métodos de pago preparados</h3><p>Podrán incluir tarjeta de crédito, débito, wallets digitales y otros métodos según la configuración de Shopify.</p></article><article><span>03</span><h3>Inventario sincronizado</h3><p>El inventario dependerá del producto configurado en Shopify, permitiendo disponibilidad y variantes.</p></article><article><span>04</span><h3>Confirmación de compra</h3><p>Shopify podrá enviar confirmaciones y notificaciones posteriores al cliente.</p></article></div>
-      <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+    <section class="safe-checkout section-pad" id="compra-segura">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Compra segura</p><h2>Checkout preparado con Shopify</h2></div>
+        <p>FRAME POSTER permite explorar colecciones y preparar la compra. El carrito, pagos, inventario y procesamiento de órdenes se gestionarán mediante Shopify Buy Button.</p>
+      </div>
+      <div class="feature-grid four">
+        <article><span>01</span><h3>Carrito y checkout</h3><p>Cada producto conserva un espacio listo para integrar Shopify Buy Button y finalizar la compra mediante Shopify.</p></article>
+        <article><span>02</span><h3>Métodos de pago preparados</h3><p>Los pagos podrán incluir tarjeta de crédito, débito, wallets digitales y métodos disponibles según configuración final.</p></article>
+        <article><span>03</span><h3>Inventario sincronizado</h3><p>La disponibilidad dependerá del inventario configurado en Shopify para cada poster.</p></article>
+        <article><span>04</span><h3>Confirmación de compra</h3><p>Shopify podrá enviar confirmaciones y notificaciones al cliente después del pago.</p></article>
+      </div>
+      <a href="#catalogo" class="btn btn-primary section-button">Ver catálogo</a>
     </section>
 
-    <section class="business section-pad" id="modelo-negocio" aria-labelledby="business-title">
-      <div class="section-heading narrow"><p class="eyebrow">Estrategia</p><h2 id="business-title">Modelo de negocio</h2><p>FRAME POSTER opera como un marketplace visual de posters decorativos, pensado para conectar compradores que quieren decorar sus espacios con piezas gráficas organizadas por estilo.</p></div>
-      <div class="feature-grid five"><article><h3>Modelo híbrido B2C + marketplace</h3><p>La primera etapa funciona como tienda B2C con catálogo propio de referencia. Después puede integrar creadores externos.</p></article><article><h3>Venta directa y comisión por creador</h3><p>Ingresos por venta directa y, al integrar vendedores, comisión sobre cada venta.</p></article><article><h3>Menos búsqueda, mejor elección</h3><p>Reduce saturación visual y organiza posters por colecciones claras.</p></article><article><h3>Posters por estilo visual</h3><p>Minimalista japonés, Arquitectura brutalista, Editorial gráfico, Automotive y Edición limitada.</p></article><article><h3>Precios accesibles por colección</h3><p>Precios en MXN diferenciados por pieza, edición, complejidad visual y percepción de valor.</p></article></div>
+    <section class="business-model section-pad" id="modelo-negocio">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Estrategia</p><h2>Modelo de negocio</h2></div>
+        <p>FRAME POSTER opera como un marketplace visual de posters decorativos, pensado para conectar compradores con piezas gráficas organizadas por estilo.</p>
+      </div>
+      <div class="feature-grid five">
+        <article><span>01</span><h3>Modelo híbrido B2C + marketplace</h3><p>Primero funciona como tienda B2C con catálogo de referencia; después puede integrar artistas y vendedores externos.</p></article>
+        <article><span>02</span><h3>Venta directa y comisión</h3><p>El proyecto puede generar ingresos por venta directa y comisión sobre ventas de creadores integrados.</p></article>
+        <article><span>03</span><h3>Menos búsqueda, mejor elección</h3><p>El valor principal es reducir saturación visual y organizar posters por colecciones claras.</p></article>
+        <article><span>04</span><h3>Posters por estilo visual</h3><p>Minimalista japonés, arquitectura brutalista, editorial gráfico, automotive posters y edición limitada.</p></article>
+        <article><span>05</span><h3>Precios accesibles por colección</h3><p>Los precios se mantienen en MXN y varían por tipo de pieza, edición y percepción de valor.</p></article>
+      </div>
     </section>
 
-    <section class="marketing section-pad" id="marketing" aria-labelledby="marketing-title">
-      <div class="section-heading split"><div><p class="eyebrow">Marketing</p><h2 id="marketing-title">Estrategia de marketing</h2></div><p>La estrategia combina posicionamiento orgánico, contenido visual, campañas pagadas y contacto directo para llevar al usuario desde el descubrimiento hasta la compra.</p></div>
-      <div class="marketing-grid"><article><h3>SEO</h3><p>Títulos claros, meta description, estructura semántica, categorías descriptivas y keywords: posters decorativos, posters para cuarto, arte impreso, posters minimalistas, posters japoneses, posters automotrices, arquitectura brutalista y edición limitada.</p></article><article><h3>SEM</h3><p>Campaña propuesta: “Posters para decorar espacios”. Objetivo: tráfico y conversión. Segmentación: decoración, diseño, arte, interiores y cultura visual.</p></article><article><h3>Email marketing</h3><p>Flujos sugeridos: bienvenida, recomendación por colección, carrito abandonado, lanzamiento de edición limitada y post-compra.</p></article><article><h3>Redes sociales</h3><p>Instagram será el canal principal para moodboards, posters en contexto y nuevas colecciones. <a href="https://instagram.com/frame_posters_" target="_blank" rel="noopener noreferrer" data-track="instagram">@frame_posters_</a></p></article><article><h3>Funnel de conversión</h3><p><strong>Awareness → Interest → Consideration → Purchase → Loyalty</strong>. El usuario descubre la marca, explora, compara, contacta o compra.</p></article><article><h3>Presupuesto de arranque</h3><table><tr><td>Google Ads</td><td>$1,500 MXN</td></tr><tr><td>Instagram Ads</td><td>$1,500 MXN</td></tr><tr><td>Diseño de contenido</td><td>$1,000 MXN</td></tr><tr><td>Email marketing</td><td>$0–$500 MXN</td></tr><tr><th>Total estimado</th><th>$4,000–$4,500 MXN</th></tr></table></article></div>
+    <section class="marketing-section section-pad" id="marketing">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Marketing</p><h2>Estrategia de marketing</h2></div>
+        <p>La estrategia combina posicionamiento orgánico, contenido visual, campañas pagadas y contacto directo para llevar al usuario desde descubrimiento hasta compra.</p>
+      </div>
+      <div class="strategy-grid">
+        <article><h3>SEO</h3><p>Títulos claros, meta description, estructura semántica y palabras clave: posters decorativos, arte impreso, posters editoriales, posters japoneses, posters automotrices y decoración de interiores.</p></article>
+        <article><h3>SEM</h3><p>Campañas en Google Ads para búsquedas relacionadas con posters decorativos, decoración de espacios y regalos visuales.</p></article>
+        <article><h3>Email marketing</h3><p>Flujos de bienvenida, recomendaciones por colección, carrito abandonado, lanzamientos de edición limitada y post-compra.</p></article>
+        <article><h3>Redes sociales</h3><p>Instagram será el canal principal para moodboards, lanzamientos y contenido visual de inspiración. <a href="https://www.instagram.com/frame_poster_/" target="_blank" rel="noopener noreferrer" data-track="instagram">@frame_poster_</a></p></article>
+        <article><h3>Funnel</h3><p>Awareness → Interest → Consideration → Purchase → Loyalty.</p></article>
+        <article><h3>Presupuesto de arranque</h3><p>Google Ads $1,500 MXN · Instagram Ads $1,500 MXN · Diseño $1,000 MXN · Email $0–$500 MXN.</p></article>
+      </div>
     </section>
 
-    <section class="operation section-pad" id="operacion" aria-labelledby="operation-title">
-      <div class="section-heading split"><div><p class="eyebrow">Operación</p><h2 id="operation-title">Operación y logística</h2></div><p>FRAME POSTER está diseñado para funcionar con un flujo operativo claro: selección del poster, procesamiento de pago, preparación del pedido, envío y seguimiento post-compra.</p></div>
-      <div class="feature-grid six"><article><h3>Modelo de inventario</h3><p>Inventario bajo demanda o stock limitado por colección. Las ediciones limitadas pueden manejar cantidades reducidas.</p></article><article><h3>Preparación del pedido</h3><p>Después del pago, el poster se imprime o se toma del inventario, se revisa, empaca y prepara para envío.</p></article><article><h3>Envío</h3><p>Paqueterías nacionales; tiempos según ubicación del cliente y disponibilidad del producto.</p></article><article><h3>Seguimiento</h3><p>Confirmación, número de guía y actualizaciones por correo, SMS o WhatsApp según integración.</p></article><article><h3>Atención al cliente</h3><p>Seguimiento por WhatsApp e Instagram.</p></article><article><h3>Cambios y devoluciones</h3><p>Políticas según estado del producto, daño en envío, errores de impresión o condiciones comerciales.</p></article></div>
-      <a href="https://wa.me/525520891454" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-track="whatsapp">Contactar por WhatsApp</a>
+    <section class="operations section-pad" id="operacion">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Operación</p><h2>Operación y logística</h2></div>
+        <p>FRAME POSTER está diseñado para operar con un flujo claro: selección, procesamiento de pago, preparación, envío y seguimiento post-compra.</p>
+      </div>
+      <div class="feature-grid three">
+        <article><span>01</span><h3>Modelo de inventario</h3><p>Puede operar bajo demanda o con stock limitado por colección.</p></article>
+        <article><span>02</span><h3>Preparación del pedido</h3><p>El poster se imprime o toma del inventario, se revisa, empaqueta y prepara para envío.</p></article>
+        <article><span>03</span><h3>Envío y seguimiento</h3><p>El cliente podrá recibir confirmación, guía y actualizaciones por correo, SMS o WhatsApp según integración.</p></article>
+        <article><span>04</span><h3>Atención al cliente</h3><p>Dudas, solicitudes y seguimiento podrán atenderse por WhatsApp e Instagram.</p></article>
+        <article><span>05</span><h3>Cambios y devoluciones</h3><p>Las políticas se definirán según estado del producto, daño en envío o condiciones finales de venta.</p></article>
+        <article><span>06</span><h3>Paquetería</h3><p>Los envíos podrán realizarse mediante paqueterías nacionales según cobertura y costo final.</p></article>
+      </div>
+      <a href="https://wa.me/525520891454" class="btn btn-primary section-button" target="_blank" rel="noopener noreferrer" data-track="whatsapp">Contactar por WhatsApp</a>
     </section>
 
-    <section class="analytics section-pad" id="analytics" aria-labelledby="analytics-title">
-      <div class="section-heading split"><div><p class="eyebrow">Medición</p><h2 id="analytics-title">Analytics y métricas de éxito</h2></div><p>Para evaluar el desempeño se medirán indicadores de tráfico, interacción, conversión y contacto. Las cifras son objetivos o ejemplos académicos para guiar decisiones.</p></div>
-      <div class="metric-grid"><article><strong>1,000</strong><span>visitas mensuales objetivo</span><p>Medir llegada desde redes, buscadores o campañas.</p></article><article><strong>2.5%</strong><span>tasa de conversión objetivo</span><p>Visitantes que realizan compra o intención de compra.</p></article><article><strong>80</strong><span>clics en WhatsApp mensuales</span><p>Usuarios que solicitan información directa.</p></article><article><strong>Top 5</strong><span>productos más vistos</span><p>Identificar estilos con mayor interés.</p></article><article><strong>CAC</strong><span>costo de adquisición estimado</span><p>Cuánto cuesta atraer a un comprador.</p></article><article><strong>LTV</strong><span>valor de vida del cliente</span><p>Potencial de recompra por nuevas colecciones.</p></article></div>
-      <div class="tools-grid"><article><h3>Herramientas sugeridas</h3><p>Google Analytics 4, Google Search Console, Meta Ads Manager, Shopify Analytics, métricas de WhatsApp Business y reporte interno mensual.</p></article><article><h3>Eventos a medir</h3><p>Clic en producto, WhatsApp, Instagram, filtro por colección, botón de compra, envío de formulario y scroll al catálogo.</p></article></div>
+    <section class="experience section-pad">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Experiencia</p><h2>Mejoramos tu experiencia</h2></div>
+        <p>FRAME POSTER utiliza señales generales de navegación y preferencias de colección para mejorar el catálogo, la experiencia de compra y la atención al cliente.</p>
+      </div>
     </section>
 
-    <section class="how-it-works section-pad" id="como-funciona" aria-labelledby="how-title">
-      <div class="section-heading center"><p class="eyebrow">Proceso</p><h2 id="how-title">Cómo funciona</h2><p>Una experiencia clara desde la exploración hasta la compra preparada con Shopify.</p></div>
-      <div class="steps-grid"><article><span>1</span><h3>Explora por colección</h3><p>Encuentra posters organizados por estética, tipo de espacio y personalidad visual.</p></article><article><span>2</span><h3>Elige sin complicarte</h3><p>Cada pieza tiene información clara para decidir rápido.</p></article><article><span>3</span><h3>Compra de forma segura</h3><p>El pago y checkout se procesarán mediante Shopify.</p></article><article><span>4</span><h3>Recibe y transforma</h3><p>Recibe tu pedido y dale a tu pared una pieza que combine contigo.</p></article></div>
+    <section class="how-it-works section-pad" id="como-funciona">
+      <div class="section-heading center narrow"><p class="eyebrow">Proceso</p><h2>Cómo funciona</h2><p>Una compra clara desde que exploras hasta que recibes tu poster.</p></div>
+      <div class="steps-grid">
+        <article><span>1</span><h3>Explora por colección</h3><p>Encuentra posters organizados por estética y personalidad visual.</p></article>
+        <article><span>2</span><h3>Elige sin complicarte</h3><p>Cada pieza tiene información clara para decidir con seguridad.</p></article>
+        <article><span>3</span><h3>Compra de forma segura</h3><p>El pago y checkout se gestionarán mediante Shopify.</p></article>
+        <article><span>4</span><h3>Recibe y transforma tu espacio</h3><p>Dale a tu pared una pieza que realmente combine contigo.</p></article>
+      </div>
     </section>
 
-    <section class="trust section-pad" aria-labelledby="trust-title">
-      <div class="trust-panel"><div><p class="eyebrow">Confianza</p><h2 id="trust-title">Listo para una experiencia de compra clara.</h2><p>La página está preparada para pagos seguros mediante Shopify, checkout confiable, tracking post-compra y atención por WhatsApp e Instagram, según configuración final.</p></div><div class="trust-grid"><div>Pagos seguros mediante Shopify</div><div>Checkout confiable</div><div>Productos bien presentados</div><div>Información clara de envío</div><div>Atención por WhatsApp e Instagram</div><div>Tracking post-compra</div><div>Políticas de cambios y devoluciones</div><div>Términos y privacidad disponibles</div></div></div>
+    <section class="trust section-pad">
+      <div class="trust-panel">
+        <div><p class="eyebrow">Confianza</p><h2>Compra clara, atención directa y detalles visibles.</h2><p>La experiencia está preparada para conectar con Shopify, mantener contacto directo y presentar políticas visibles.</p></div>
+        <div class="trust-grid">
+          <div>Pagos preparados mediante Shopify</div><div>Checkout confiable</div><div>Productos bien presentados</div><div>Información clara de envío</div><div>Atención por WhatsApp e Instagram</div><div>Políticas disponibles</div>
+        </div>
+      </div>
     </section>
 
-    <section class="sell-section section-pad" id="vende" aria-labelledby="sell-title">
-      <div class="sell-content"><p class="eyebrow">Crecimiento creativo</p><h2 id="sell-title">¿Tienes diseños que deberían estar en más paredes?</h2><p>Únete a Frame Poster y muestra tus piezas en una plataforma pensada para conectar artistas, diseñadores y compradores que buscan algo diferente.</p><ul><li>Tu trabajo se presenta dentro de una experiencia visual profesional.</li><li>Más personas pueden descubrir tus diseños por colección y estilo.</li><li>Tus productos aparecen con información clara para facilitar la decisión.</li><li>Los vendedores reales se integrarán conforme avance el marketplace.</li></ul><p class="secondary-contact">También puedes escribirnos por <a href="https://wa.me/525520891454" target="_blank" rel="noopener noreferrer" data-track="whatsapp">WhatsApp</a> o <a href="https://instagram.com/frame_posters_" target="_blank" rel="noopener noreferrer" data-track="instagram">Instagram</a>.</p></div>
-      <form class="seller-form" id="sellerForm"><label>Nombre<input type="text" name="name" placeholder="Tu nombre" required /></label><label>Correo<input type="email" name="email" placeholder="correo@ejemplo.com" required /></label><label>Nombre de marca o estudio<input type="text" name="brand" placeholder="Nombre de tu estudio" required /></label><label>Tipo de producto<select name="productType" required><option value="">Selecciona una opción</option><option>Posters decorativos</option><option>Ilustración digital</option><option>Fotografía impresa</option><option>Arte abstracto</option><option>Otro</option></select></label><label>Mensaje breve<textarea name="message" rows="4" placeholder="Cuéntanos qué vendes y qué estilo manejas." required></textarea></label><button type="submit" class="btn btn-primary full-width">Enviar solicitud</button><p class="form-note">Formulario visual para proyecto académico, sin backend activo por ahora.</p></form>
+    <section class="sell-section section-pad" id="vende">
+      <div class="sell-content">
+        <p class="eyebrow">Crecimiento creativo</p>
+        <h2>¿Tienes diseños que deberían estar en más paredes?</h2>
+        <p>Únete a Frame Poster y muestra tus piezas en una plataforma pensada para conectar artistas, diseñadores y compradores que buscan algo diferente.</p>
+        <ul class="seller-benefits">
+          <li>Tu trabajo se presenta dentro de una experiencia visual profesional.</li>
+          <li>Más personas pueden descubrir tus diseños por colección y estilo.</li>
+          <li>Tus productos aparecen con información clara para facilitar la decisión.</li>
+          <li>Los vendedores reales se integrarán conforme avance el marketplace.</li>
+        </ul>
+      </div>
+
+      <form class="seller-form" id="sellerForm" action="https://formspree.io/f/xvzykgpd" method="POST">
+        <input type="hidden" name="_subject" value="Nueva solicitud desde FRAME POSTER">
+        <label>Nombre<input type="text" name="nombre" placeholder="Tu nombre" required></label>
+        <label>Correo<input type="email" name="email" placeholder="correo@ejemplo.com" required></label>
+        <label>Nombre de marca o estudio<input type="text" name="marca" placeholder="Nombre de tu estudio" required></label>
+        <label>Tipo de producto
+          <select name="tipo_producto" required>
+            <option value="">Selecciona una opción</option>
+            <option>Posters decorativos</option>
+            <option>Ilustración digital</option>
+            <option>Fotografía impresa</option>
+            <option>Arte abstracto</option>
+            <option>Otro</option>
+          </select>
+        </label>
+        <label>Mensaje breve<textarea name="mensaje" rows="4" placeholder="Cuéntanos qué vendes y qué estilo manejas." required></textarea></label>
+        <button type="submit" class="btn btn-primary full-width">Enviar solicitud</button>
+        <p class="form-note">El formulario se envía mediante Formspree a FRAME POSTER.</p>
+      </form>
     </section>
 
-    <section class="contact section-pad" id="contacto" aria-labelledby="contact-title">
-      <div class="contact-card"><p class="eyebrow">Contacto</p><h2 id="contact-title">Contacto</h2><p>¿Tienes dudas, quieres comprar un poster o te interesa vender tus diseños en FRAME POSTER? Escríbenos directamente.</p><div class="contact-actions"><a href="https://wa.me/525520891454" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-track="whatsapp">Contactar por WhatsApp</a><a href="https://instagram.com/frame_posters_" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-track="instagram">Instagram: @frame_posters_</a></div><div class="contact-info"><span>WhatsApp: 55 2089 1454</span><span>Instagram: @frame_posters_</span></div></div>
-    </section>
-
-    <section class="legal section-pad" id="terminos" aria-labelledby="terms-title">
-      <div class="legal-card"><p class="eyebrow">Legal</p><h2 id="terms-title">Términos y condiciones</h2><p>Este sitio forma parte de un proyecto académico de eCommerce. FRAME POSTER funciona como una experiencia visual tipo marketplace para explorar posters decorativos y piezas gráficas. Las compras, pagos, inventario, checkout y procesamiento de órdenes se gestionarán mediante Shopify una vez integrada la tienda.</p><ul><li>Los precios mostrados están en MXN.</li><li>Las imágenes se utilizan como referencia visual para el proyecto.</li><li>La disponibilidad dependerá del inventario configurado en Shopify.</li><li>Los métodos de pago están sujetos a la configuración de Shopify.</li><li>La compra final dependerá de la integración de Shopify Buy Button.</li><li>FRAME POSTER no se presenta como distribuidor oficial de marcas, personajes, películas o fabricantes mencionados.</li><li>El seguimiento dependerá de la paquetería e integración seleccionada.</li><li>Las políticas de cambios y devoluciones se aplicarán según condiciones finales de venta.</li></ul></div>
-    </section>
-
-    <section class="privacy section-pad" id="privacidad" aria-labelledby="privacy-title">
-      <div class="legal-card"><p class="eyebrow">Privacidad</p><h2 id="privacy-title">Aviso de privacidad</h2><p>FRAME POSTER utiliza la información enviada en formularios únicamente para fines de contacto, seguimiento de solicitudes y comunicación relacionada con el proyecto. Los datos solicitados pueden incluir nombre, correo electrónico, nombre de marca o estudio, tipo de producto y mensaje.</p><ul><li>La información no se vende ni se comparte con terceros para fines publicitarios.</li><li>El formulario de contacto es visual y académico, sin backend activo por ahora.</li><li>El sitio puede usar cookies básicas y métricas de navegación.</li><li>Podrá integrarse con Shopify Analytics, Google Analytics o Meta Pixel.</li><li>Si se conecta Shopify, el manejo de datos de compra dependerá también de Shopify.</li><li>Para dudas o solicitudes, el usuario podrá contactar por WhatsApp o Instagram.</li></ul></div>
+    <section class="contact section-pad" id="contacto">
+      <div class="contact-card contact-card-grid">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2>Contacto</h2>
+          <p>¿Tienes dudas, quieres comprar un poster o te interesa vender tus diseños en FRAME POSTER? Escríbenos directamente.</p>
+          <div class="contact-actions">
+            <a href="https://wa.me/525520891454" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-track="whatsapp">Contactar por WhatsApp</a>
+            <a href="https://www.instagram.com/frame_poster_/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-track="instagram">Instagram: @frame_poster_</a>
+          </div>
+          <div class="contact-info">
+            <span>WhatsApp: 55 2089 1454</span>
+            <span>Instagram: @frame_poster_</span>
+          </div>
+        </div>
+        <div class="qr-panel">
+          <img src="assets/frame_poster_qr.png" alt="QR de Instagram de FRAME POSTER">
+          <p>Escanea para abrir Instagram</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-main"><div><a href="#inicio" class="logo footer-logo">FRAME <span>POSTER</span></a><p>Posters para espacios que se sienten tuyos.</p><p class="legal-note">Proyecto académico de eCommerce. Las compras, pagos y checkout se gestionan mediante Shopify.</p><p>WhatsApp: <a href="https://wa.me/525520891454" target="_blank" rel="noopener noreferrer" data-track="whatsapp">55 2089 1454</a><br>Instagram: <a href="https://instagram.com/frame_posters_" target="_blank" rel="noopener noreferrer" data-track="instagram">@frame_posters_</a></p></div><div class="footer-links"><a href="#inicio">Inicio</a><a href="#catalogo">Catálogo</a><a href="#colecciones">Colecciones</a><a href="#compra-segura">Compra segura</a><a href="#marketing">Marketing</a><a href="#operacion">Operación</a><a href="#analytics">Analytics</a><a href="#como-funciona">Cómo funciona</a><a href="#vende">Vende con nosotros</a><a href="#contacto">Contacto</a><a href="#terminos">Términos y condiciones</a><a href="#privacidad">Aviso de privacidad</a></div></div><div class="footer-bottom"><span>© 2026 FRAME POSTER.</span><span>Landing desarrollada para Vercel.</span></div>
+    <div class="footer-main">
+      <div>
+        <a href="#inicio" class="logo footer-logo">FRAME <span>POSTER</span></a>
+        <p>Posters para espacios que se sienten tuyos.</p>
+        <p class="legal-note">Proyecto académico de eCommerce. Las compras, pagos y checkout se gestionan mediante Shopify.</p>
+        <p>WhatsApp: <a href="https://wa.me/525520891454" target="_blank" rel="noopener noreferrer" data-track="whatsapp">55 2089 1454</a><br>Instagram: <a href="https://www.instagram.com/frame_poster_/" target="_blank" rel="noopener noreferrer" data-track="instagram">@frame_poster_</a></p>
+      </div>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#colecciones">Colecciones</a>
+        <a href="#compra-segura">Compra segura</a>
+        <a href="#marketing">Marketing</a>
+        <a href="#operacion">Operación</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#vende">Vende con nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a href="terminos.html">Términos y condiciones</a>
+        <a href="privacidad.html">Aviso de privacidad</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 FRAME POSTER.</span><span>Landing desarrollada para despliegue en Vercel.</span></div>
   </footer>
 
   <a href="https://wa.me/525520891454" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" data-track="whatsapp">WhatsApp</a>
-  <div class="toast" id="toast" role="status" aria-live="polite">Acción simulada correctamente.</div>
-  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies"><p>Usamos cookies y métricas básicas para mejorar la experiencia del sitio y analizar el desempeño del proyecto.</p><div><button id="acceptCookies" type="button">Aceptar</button><a href="#privacidad">Más información</a></div></div>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Usamos cookies y métricas básicas para mejorar la experiencia del sitio.</p>
+    <div><button type="button" id="acceptCookies">Aceptar</button><a href="privacidad.html">Más información</a></div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Acción realizada.</div>
+
   <script src="script.js"></script>
 </body>
 </html>
