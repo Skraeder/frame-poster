@@ -1,14 +1,18 @@
-QA FRAME POSTER CLIENTE FINAL
+QA FRAME POSTER CARRITO MARCOS FINAL
 
-no_forbidden_public_content: OK
-has_terms_link: OK
-has_privacy_link: OK
-has_contact_link: OK
-has_formspree: OK
-has_whatsapp: OK
-has_instagram: OK
-has_qr_ref: OK
+header_no_whatsapp_button: OK
+header_has_cart: OK
+cart_drawer_exists: OK
+cart_total_exists: OK
+checkout_button_exists: OK
+frames_three_options: OK
+preview_exists: OK
+specs_visible: OK
+quote_form_formspree: OK
+seller_form_formspree: OK
+no_prevent_default: OK
+no_internal_sections: OK
+instagram_visible_css: OK
 qr_exists: OK
-no_broken_asset_refs: OK
-no_preventDefault: OK
-instagram_css_visible: OK
+whatsapp_contact_exists: OK
+no_broken_assets: OK

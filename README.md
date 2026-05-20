@@ -1,6 +1,6 @@
-# FRAME POSTER - Cliente final
+# FRAME POSTER - Carrito y marcos final
 
-Esta carpeta contiene la versión final enfocada al cliente, lista para subir a GitHub y desplegar en Vercel.
+Esta carpeta contiene la versión final con carrito funcional, selector de marco, preview del poster con marco y cotización de medidas especiales.
 
 ## Incluye
 
@@ -14,26 +14,28 @@ Esta carpeta contiene la versión final enfocada al cliente, lista para subir a 
   - 20 imágenes de posters
   - `frame_poster_qr.png`
 
-## Cambios principales
+## Funciones principales
 
-- Se quitaron secciones internas como marketing, modelo de negocio, operación, analytics, métricas y reportes.
-- La página pública se enfoca en vender, mostrar productos y generar confianza.
-- El botón de Instagram ahora tiene fondo blanco y texto negro para que se vea sobre fondo oscuro.
-- El QR correcto de Instagram está en `assets/frame_poster_qr.png`.
-- El formulario de “Vende con nosotros” está conectado a Formspree.
-- Términos y aviso de privacidad están en páginas separadas.
-
-## Formulario
-
-Endpoint activo:
-
-`https://formspree.io/f/xvzykgpd`
-
-Si no llega correo:
-1. Entra a Formspree.
-2. Verifica que el formulario tenga el correo receptor correcto.
-3. Confirma el destinatario desde el correo.
-4. Revisa spam/promociones.
+- Botón de carrito en header.
+- Carrito funcional con contador dinámico.
+- Panel lateral de carrito.
+- Productos agregados con nombre, imagen, precio, cantidad y marco seleccionado.
+- Suma automática de subtotal y total.
+- Envío gratis visible.
+- Selector de marco:
+  - Café madera
+  - Negro
+  - Beige
+- Preview del poster con marco.
+- Agregar al carrito desde preview.
+- Especificaciones visibles:
+  - 48 cm x 60 cm
+  - Ultra calidad
+  - Marco opcional
+- Formulario de cotización de medidas especiales.
+- Formulario “Vende con nosotros”.
+- Ambos formularios usan Formspree:
+  `https://formspree.io/f/xvzykgpd`
 
 ## Subir a GitHub
 
@@ -47,6 +49,19 @@ Si no llega correo:
    - `README.md`
    - carpeta `assets`
 3. Haz commit con:
-   `Subir versión cliente final de Frame Poster`
-4. Espera el despliegue de Vercel.
-5. Prueba filtros, formulario, WhatsApp, Instagram, QR y páginas legales.
+   `Subir carrito y marcos de Frame Poster`
+4. Espera el despliegue automático en Vercel.
+5. Prueba:
+   - carrito
+   - selector de marco
+   - preview con marco
+   - formulario de cotización
+   - formulario “Vende con nosotros”
+   - WhatsApp
+   - Instagram
+   - QR
+   - términos y privacidad
+
+## Nota
+
+El botón “Pagar ahora” es temporal hasta conectar Shopify Buy Button.

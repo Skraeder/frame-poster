@@ -33,7 +33,7 @@
 
       <div class="header-actions">
         <a href="#catalogo" class="header-cta">Explorar posters</a>
-        <a href="https://wa.me/525520891454" class="header-whatsapp" target="_blank" rel="noopener noreferrer" data-track="whatsapp">WhatsApp</a>
+        <button class="cart-header-button" id="cartOpenButton" type="button" aria-label="Abrir carrito">Carrito (0)</button>
       </div>
     </nav>
   </header>
@@ -43,16 +43,16 @@
       <div class="hero-content">
         <p class="eyebrow">Galería editorial de posters</p>
         <h1>Menos opciones. Mejores decisiones.</h1>
-        <p class="hero-text">Posters y arte impreso para transformar tu espacio sin perderte entre miles de opciones.</p>
+        <p class="hero-text">Elige tu poster, selecciona el marco, visualízalo y agrégalo al carrito con envío gratis.</p>
         <div class="hero-actions">
           <a href="#catalogo" class="btn btn-primary">Explorar catálogo</a>
-          <a href="#vende" class="btn btn-secondary">Vende tu arte</a>
-          <a href="https://wa.me/525520891454" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-track="whatsapp">Contactar por WhatsApp</a>
+          <a href="#marcos" class="btn btn-secondary">Elegir marco</a>
+          <a href="#cotizacion" class="btn btn-outline">Cotizar medida especial</a>
         </div>
         <div class="hero-stats">
-          <div><strong>20 posters</strong><span>organizados por colección visual</span></div>
-          <div><strong>5 estilos</strong><span>para elegir con intención</span></div>
-          <div><strong>Compra clara</strong><span>productos, contacto y políticas visibles</span></div>
+          <div><strong>48 x 60 cm</strong><span>medida estándar de cada poster</span></div>
+          <div><strong>3 marcos</strong><span>café madera, negro o beige</span></div>
+          <div><strong>Envío gratis</strong><span>visible en el carrito</span></div>
         </div>
       </div>
 
@@ -75,7 +75,7 @@
     </section>
 
     <section class="editorial-strip">
-      <div><span>POSTERS / DISEÑO / ESPACIO</span><p>Una galería digital para elegir piezas visuales con más claridad y menos ruido.</p></div>
+      <div><span>POSTERS / MARCOS / ESPACIO</span><p>Una experiencia visual para elegir, personalizar y comprar con más claridad.</p></div>
     </section>
 
     <section class="value-section section-pad">
@@ -140,10 +140,51 @@
       </div>
     </section>
 
+    <section class="frame-section section-pad" id="marcos">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Personalización</p><h2>Personaliza tu poster</h2></div>
+        <p>Elige el marco que mejor combine con tu espacio y visualiza cómo se vería tu poster antes de comprar.</p>
+      </div>
+      <div class="frame-options" role="group" aria-label="Seleccionar marco">
+        <button class="frame-option" type="button" data-frame="Café madera" data-frame-class="frame-cafe">
+          <span class="frame-swatch wood"></span>
+          <strong>Café madera</strong>
+          <em>Acabado cálido tipo madera, ideal para espacios naturales, editoriales o con tonos arena.</em>
+          <small>Seleccionado</small>
+        </button>
+        <button class="frame-option selected" type="button" data-frame="Negro" data-frame-class="frame-negro">
+          <span class="frame-swatch black"></span>
+          <strong>Negro</strong>
+          <em>Marco de alto contraste para posters gráficos, automotrices o piezas con estética intensa.</em>
+          <small>Seleccionado</small>
+        </button>
+        <button class="frame-option" type="button" data-frame="Beige" data-frame-class="frame-beige">
+          <span class="frame-swatch beige"></span>
+          <strong>Beige</strong>
+          <em>Marco claro y discreto para espacios minimalistas, luminosos y limpios.</em>
+          <small>Seleccionado</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="specs-section section-pad" id="especificaciones">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Especificaciones</p><h2>Posters de ultra calidad</h2></div>
+        <p>Todos los posters de FRAME POSTER tienen medida estándar de 48 cm x 60 cm y están pensados para impresión de ultra calidad, con acabado visual limpio para decoración interior.</p>
+      </div>
+      <div class="spec-grid">
+        <article><strong>Medida</strong><span>48 cm x 60 cm</span></article>
+        <article><strong>Impresión</strong><span>Ultra calidad</span></article>
+        <article><strong>Uso</strong><span>Decoración interior</span></article>
+        <article><strong>Formato</strong><span>Poster decorativo</span></article>
+        <article><strong>Marco</strong><span>Café madera, negro o beige</span></article>
+      </div>
+    </section>
+
     <section class="products section-pad" id="catalogo">
       <div class="section-heading split">
         <div><p class="eyebrow">Catálogo</p><h2>Posters decorativos</h2></div>
-        <p>Elige entre posters editoriales, japoneses, automotrices, brutalistas y piezas de edición limitada.</p>
+        <p>Elige tu poster, revisa sus especificaciones y agrégalo al carrito con el marco seleccionado.</p>
       </div>
 
       <div class="filter-bar">
@@ -158,7 +199,7 @@
       <p class="catalog-status" id="catalogStatus">Mostrando todos los posters disponibles.</p>
 
       <div class="product-grid" id="productGrid">
-          <article class="product-card" data-category="Minimalista japonés">
+          <article class="product-card" data-category="Minimalista japonés" data-name="Sol Naciente" data-price="349" data-image="assets/sol-quieto.jpg">
             <div class="badge">Nuevo</div>
             <button class="product-image" type="button" style="background-image:url('assets/sol-quieto.jpg')" aria-label="Ver poster Sol Naciente" data-track="producto:Sol Naciente"></button>
             <div class="product-content">
@@ -166,12 +207,20 @@
               <h3>Poster “Sol Naciente”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Poster minimalista con textura de papel, símbolo solar rojo y composición limpia. Ideal para espacios tranquilos con estética japonesa.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$349 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Sol Naciente">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Minimalista japonés">
+          <article class="product-card" data-category="Minimalista japonés" data-name="Tokyo Train" data-price="389" data-image="assets/train_japanese.jpg">
             <div class="badge">Más visto</div>
             <button class="product-image" type="button" style="background-image:url('assets/train_japanese.jpg')" aria-label="Ver poster Tokyo Train" data-track="producto:Tokyo Train"></button>
             <div class="product-content">
@@ -179,12 +228,20 @@
               <h3>Poster “Tokyo Train”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Poster urbano inspirado en Japón, con tren, ciudad, bloques de color y energía visual moderna.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$389 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Tokyo Train">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Minimalista japonés">
+          <article class="product-card" data-category="Minimalista japonés" data-name="Tokyo Asakusa" data-price="429" data-image="assets/tokyo_japanese.jpg">
             <div class="badge">Nuevo</div>
             <button class="product-image" type="button" style="background-image:url('assets/tokyo_japanese.jpg')" aria-label="Ver poster Tokyo Asakusa" data-track="producto:Tokyo Asakusa"></button>
             <div class="product-content">
@@ -192,12 +249,20 @@
               <h3>Poster “Tokyo Asakusa”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Pieza inspirada en arquitectura tradicional japonesa, con fotografía monocromática y tipografía roja de alto impacto.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$429 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Tokyo Asakusa">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Minimalista japonés">
+          <article class="product-card" data-category="Minimalista japonés" data-name="Cat Japanese Poster" data-price="329" data-image="assets/cat_japanese.jpg">
             <div class="badge">Pocas piezas</div>
             <button class="product-image" type="button" style="background-image:url('assets/cat_japanese.jpg')" aria-label="Ver poster Cat Japanese Poster" data-track="producto:Cat Japanese Poster"></button>
             <div class="product-content">
@@ -205,12 +270,20 @@
               <h3>Poster “Cat Japanese Poster”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Ilustración gráfica de estética japonesa con textura vintage, rojo intenso y contraste negro.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$329 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Cat Japanese Poster">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Arquitectura brutalista">
+          <article class="product-card" data-category="Arquitectura brutalista" data-name="Residential Brutalism" data-price="429" data-image="assets/concreto-azul.jpg">
             <div class="badge">Más vendido</div>
             <button class="product-image" type="button" style="background-image:url('assets/concreto-azul.jpg')" aria-label="Ver poster Residential Brutalism" data-track="producto:Residential Brutalism"></button>
             <div class="product-content">
@@ -218,12 +291,20 @@
               <h3>Poster “Residential Brutalism”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Poster arquitectónico con edificio brutalista, cielo dramático y composición editorial.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$429 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Residential Brutalism">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Arquitectura brutalista">
+          <article class="product-card" data-category="Arquitectura brutalista" data-name="Brutalist Solitude" data-price="459" data-image="assets/brutalist_solitude.jpeg">
             <div class="badge">Edición corta</div>
             <button class="product-image" type="button" style="background-image:url('assets/brutalist_solitude.jpeg')" aria-label="Ver poster Brutalist Solitude" data-track="producto:Brutalist Solitude"></button>
             <div class="product-content">
@@ -231,12 +312,20 @@
               <h3>Poster “Brutalist Solitude”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Imagen atmosférica con bloques de concreto, sombras profundas y sensación industrial.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$459 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Brutalist Solitude">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Arquitectura brutalista">
+          <article class="product-card" data-category="Arquitectura brutalista" data-name="Brutalism Archive" data-price="409" data-image="assets/arquitecture_brutalism.jpg">
             <div class="badge">Nuevo</div>
             <button class="product-image" type="button" style="background-image:url('assets/arquitecture_brutalism.jpg')" aria-label="Ver poster Brutalism Archive" data-track="producto:Brutalism Archive"></button>
             <div class="product-content">
@@ -244,12 +333,20 @@
               <h3>Poster “Brutalism Archive”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Poster tipo archivo visual con edificio brutalista, textura impresa y composición de alto impacto.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$409 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Brutalism Archive">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Arquitectura brutalista">
+          <article class="product-card" data-category="Arquitectura brutalista" data-name="Brutalist Passage" data-price="449" data-image="assets/brutalim_arquitecture.jpeg">
             <div class="badge">Pocas piezas</div>
             <button class="product-image" type="button" style="background-image:url('assets/brutalim_arquitecture.jpeg')" aria-label="Ver poster Brutalist Passage" data-track="producto:Brutalist Passage"></button>
             <div class="product-content">
@@ -257,12 +354,20 @@
               <h3>Poster “Brutalist Passage”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Composición arquitectónica monumental con sombras, escala y profundidad visual.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$449 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Brutalist Passage">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Editorial gráfico">
+          <article class="product-card" data-category="Editorial gráfico" data-name="Oppenheimer Dreaming" data-price="389" data-image="assets/editorial_poster.jpg">
             <div class="badge">Nuevo</div>
             <button class="product-image" type="button" style="background-image:url('assets/editorial_poster.jpg')" aria-label="Ver poster Oppenheimer Dreaming" data-track="producto:Oppenheimer Dreaming"></button>
             <div class="product-content">
@@ -270,12 +375,20 @@
               <h3>Poster “Oppenheimer Dreaming”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Poster editorial en blanco y negro con figura masculina, tipografía vertical y mensaje de enfoque.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$389 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Oppenheimer Dreaming">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Editorial gráfico">
+          <article class="product-card" data-category="Editorial gráfico" data-name="HER Editorial Poster" data-price="379" data-image="assets/her_editorial.jpg">
             <div class="badge">Más visto</div>
             <button class="product-image" type="button" style="background-image:url('assets/her_editorial.jpg')" aria-label="Ver poster HER Editorial Poster" data-track="producto:HER Editorial Poster"></button>
             <div class="product-content">
@@ -283,12 +396,20 @@
               <h3>Poster “HER Editorial Poster”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Composición en blanco y negro con rostro fragmentado, textura impresa y tipografía dominante.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$379 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:HER Editorial Poster">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Editorial gráfico">
+          <article class="product-card" data-category="Editorial gráfico" data-name="Art Will Save Us" data-price="319" data-image="assets/manifiesto-visual.jpg">
             <div class="badge">Nuevo</div>
             <button class="product-image" type="button" style="background-image:url('assets/manifiesto-visual.jpg')" aria-label="Ver poster Art Will Save Us" data-track="producto:Art Will Save Us"></button>
             <div class="product-content">
@@ -296,12 +417,20 @@
               <h3>Poster “Art Will Save Us”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Poster tipográfico con mensaje directo y estética de revista. Ideal para espacios creativos.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$319 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Art Will Save Us">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Editorial gráfico">
+          <article class="product-card" data-category="Editorial gráfico" data-name="Whiskey Japanese Poster" data-price="399" data-image="assets/noche-grafica.jpg">
             <div class="badge">Edición corta</div>
             <button class="product-image" type="button" style="background-image:url('assets/noche-grafica.jpg')" aria-label="Ver poster Whiskey Japanese Poster" data-track="producto:Whiskey Japanese Poster"></button>
             <div class="product-content">
@@ -309,12 +438,20 @@
               <h3>Poster “Whiskey Japanese Poster”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Diseño de alto contraste con formas rojas, negro profundo, vaso central y tipografía japonesa.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$399 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Whiskey Japanese Poster">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Automotive posters">
+          <article class="product-card" data-category="Automotive posters" data-name="Porsche Concept Field" data-price="449" data-image="assets/ruta-silenciosa.jpg">
             <div class="badge">Nuevo</div>
             <button class="product-image" type="button" style="background-image:url('assets/ruta-silenciosa.jpg')" aria-label="Ver poster Porsche Concept Field" data-track="producto:Porsche Concept Field"></button>
             <div class="product-content">
@@ -322,12 +459,20 @@
               <h3>Poster “Porsche Concept Field”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Imagen aspiracional con auto negro, campo dorado y composición limpia de estilo automotriz editorial.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$449 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Porsche Concept Field">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Automotive posters">
+          <article class="product-card" data-category="Automotive posters" data-name="Ford Mustang Mach 1" data-price="459" data-image="assets/mustang_limited.jpg">
             <div class="badge">Clásico</div>
             <button class="product-image" type="button" style="background-image:url('assets/mustang_limited.jpg')" aria-label="Ver poster Ford Mustang Mach 1" data-track="producto:Ford Mustang Mach 1"></button>
             <div class="product-content">
@@ -335,12 +480,20 @@
               <h3>Poster “Ford Mustang Mach 1”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Poster monocromático con estética de anuncio vintage, tipografía grande y presencia clásica.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$459 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Ford Mustang Mach 1">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Automotive posters">
+          <article class="product-card" data-category="Automotive posters" data-name="Liberty Walk Miura" data-price="489" data-image="assets/car_car.jpg">
             <div class="badge">Pocas piezas</div>
             <button class="product-image" type="button" style="background-image:url('assets/car_car.jpg')" aria-label="Ver poster Liberty Walk Miura" data-track="producto:Liberty Walk Miura"></button>
             <div class="product-content">
@@ -348,12 +501,20 @@
               <h3>Poster “Liberty Walk Miura”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Fotografía automotriz urbana con estética japonesa, detalles rojos y composición de alto impacto.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$489 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Liberty Walk Miura">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Automotive posters">
+          <article class="product-card" data-category="Automotive posters" data-name="Porsche Daytona 24H" data-price="469" data-image="assets/car_daytona.jpg">
             <div class="badge">Más visto</div>
             <button class="product-image" type="button" style="background-image:url('assets/car_daytona.jpg')" aria-label="Ver poster Porsche Daytona 24H" data-track="producto:Porsche Daytona 24H"></button>
             <div class="product-content">
@@ -361,12 +522,20 @@
               <h3>Poster “Porsche Daytona 24H”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Poster gráfico de pista con curvas rojas, autos en movimiento y estética de carrera.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$469 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Porsche Daytona 24H">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Edición limitada">
+          <article class="product-card" data-category="Edición limitada" data-name="Japanese Stamp Series" data-price="499" data-image="assets/stamp-series.jpg">
             <div class="badge">Edición limitada</div>
             <button class="product-image" type="button" style="background-image:url('assets/stamp-series.jpg')" aria-label="Ver poster Japanese Stamp Series" data-track="producto:Japanese Stamp Series"></button>
             <div class="product-content">
@@ -374,12 +543,20 @@
               <h3>Poster “Japanese Stamp Series”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Composición modular inspirada en sellos japoneses, símbolos tradicionales y contraste rojo, negro y blanco.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$499 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Japanese Stamp Series">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Edición limitada">
+          <article class="product-card" data-category="Edición limitada" data-name="Marty Supreme" data-price="529" data-image="assets/marty_limited.jpg">
             <div class="badge">Colección</div>
             <button class="product-image" type="button" style="background-image:url('assets/marty_limited.jpg')" aria-label="Ver poster Marty Supreme" data-track="producto:Marty Supreme"></button>
             <div class="product-content">
@@ -387,12 +564,20 @@
               <h3>Poster “Marty Supreme”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Poster cinematográfico con retrato central, tipografía masiva y color naranja dominante.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$529 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Marty Supreme">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Edición limitada">
+          <article class="product-card" data-category="Edición limitada" data-name="Red Dead Redemption 2" data-price="549" data-image="assets/rdr2_limited.jpg">
             <div class="badge">Colección</div>
             <button class="product-image" type="button" style="background-image:url('assets/rdr2_limited.jpg')" aria-label="Ver poster Red Dead Redemption 2" data-track="producto:Red Dead Redemption 2"></button>
             <div class="product-content">
@@ -400,12 +585,20 @@
               <h3>Poster “Red Dead Redemption 2”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Composición oscura con rojo intenso, personaje central y estética de cartel dramático.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$549 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Red Dead Redemption 2">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
-          <article class="product-card" data-category="Edición limitada">
+          <article class="product-card" data-category="Edición limitada" data-name="Porsche GT3RS" data-price="519" data-image="assets/carrera-tinta.jpg">
             <div class="badge">Edición limitada</div>
             <button class="product-image" type="button" style="background-image:url('assets/carrera-tinta.jpg')" aria-label="Ver poster Porsche GT3RS" data-track="producto:Porsche GT3RS"></button>
             <div class="product-content">
@@ -413,9 +606,17 @@
               <h3>Poster “Porsche GT3RS”</h3>
               <p class="reference-line">Referencia visual / poster decorativo</p>
               <p class="product-description">Poster automotriz con textura de impresión, composición tipo revista y alto contraste blanco y negro.</p>
+              <div class="spec-chips">
+                <span>48 cm x 60 cm</span>
+                <span>Ultra calidad</span>
+                <span>Marco opcional</span>
+              </div>
               <div class="price-row"><strong>$519 MXN</strong></div>
               <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-              <button class="buy-button" type="button" data-track="compra:Porsche GT3RS">Agregar al carrito</button>
+              <div class="product-actions">
+                <button class="preview-button" type="button">Ver con marco</button>
+                <button class="buy-button" type="button">Agregar al carrito</button>
+              </div>
             </div>
           </article>
       </div>
@@ -466,9 +667,9 @@
         <p>FRAME POSTER está preparado para integrar carrito, pagos e inventario mediante Shopify, ofreciendo una experiencia de compra clara y confiable.</p>
       </div>
       <div class="feature-grid four">
-        <article><span>01</span><h3>Carrito preparado</h3><p>Cada producto conserva un espacio listo para integrar compra online.</p></article>
+        <article><span>01</span><h3>Carrito preparado</h3><p>Agrega productos, elige marco, ajusta cantidades y revisa tu total.</p></article>
         <article><span>02</span><h3>Métodos de pago</h3><p>El checkout podrá configurarse con métodos de pago disponibles mediante Shopify.</p></article>
-        <article><span>03</span><h3>Confirmación de compra</h3><p>Después de comprar, el cliente podrá recibir confirmación y seguimiento.</p></article>
+        <article><span>03</span><h3>Envío gratis</h3><p>El carrito muestra envío gratis y total final antes de pagar.</p></article>
         <article><span>04</span><h3>Atención post-compra</h3><p>Para dudas o seguimiento, el contacto directo está disponible por WhatsApp.</p></article>
       </div>
       <a href="#catalogo" class="btn btn-primary section-button">Ver catálogo</a>
@@ -478,19 +679,50 @@
       <div class="section-heading center narrow">
         <p class="eyebrow">Cómo funciona</p>
         <h2>Cómo funciona</h2>
-        <p>Explora, elige y contáctanos de forma clara.</p>
+        <p>Explora, personaliza y agrega al carrito.</p>
       </div>
       <div class="steps-grid">
         <article><span>1</span><h3>Explora por colección</h3><p>Encuentra posters organizados por estética y estilo de espacio.</p></article>
         <article><span>2</span><h3>Elige tu poster</h3><p>Compara imágenes, precios y descripciones para tomar una decisión clara.</p></article>
-        <article><span>3</span><h3>Compra o contáctanos</h3><p>Puedes avanzar con el botón de compra o escribirnos por WhatsApp si tienes dudas.</p></article>
-        <article><span>4</span><h3>Recibe y transforma tu espacio</h3><p>Recibe tu pedido y dale personalidad a tu pared con una pieza visual.</p></article>
+        <article><span>3</span><h3>Selecciona marco</h3><p>Visualiza el poster con marco café madera, negro o beige antes de agregarlo.</p></article>
+        <article><span>4</span><h3>Agrega al carrito</h3><p>Revisa productos, cantidades, envío gratis y total final.</p></article>
+      </div>
+    </section>
+
+    <section class="quote-section section-pad" id="cotizacion">
+      <div class="section-heading split">
+        <div><p class="eyebrow">Medidas especiales</p><h2>¿Lo quieres en otra medida?</h2></div>
+        <p>Si necesitas un poster más grande o una medida especial, podemos cotizarlo de forma personalizada.</p>
+      </div>
+      <div class="quote-layout">
+        <div class="quote-copy">
+          <h3>Solicita una cotización</h3>
+          <p>Cuéntanos qué poster te interesa, la medida deseada y el marco que prefieres. Te responderemos con una opción personalizada.</p>
+          <a href="https://wa.me/525520891454?text=Hola,%20quiero%20cotizar%20un%20poster%20en%20medida%20especial." class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-track="whatsapp-cotizacion">Cotizar por WhatsApp</a>
+        </div>
+        <form class="quote-form" id="quoteForm" action="https://formspree.io/f/xvzykgpd" method="POST">
+          <input type="hidden" name="_subject" value="Nueva solicitud de cotización desde FRAME POSTER">
+          <label>Nombre<input type="text" name="nombre" placeholder="Tu nombre" required></label>
+          <label>Correo<input type="email" name="email" placeholder="correo@ejemplo.com" required></label>
+          <label>Poster que te interesa<input type="text" name="poster_interes" placeholder="Ej. Sol Naciente" required></label>
+          <label>Medida deseada<input type="text" name="medida_deseada" placeholder="Ej. 70 cm x 90 cm" required></label>
+          <label>Marco deseado
+            <select name="marco_deseado" required>
+              <option value="">Selecciona un marco</option>
+              <option>Café madera</option>
+              <option>Negro</option>
+              <option>Beige</option>
+            </select>
+          </label>
+          <label>Mensaje adicional<textarea name="mensaje" rows="4" placeholder="Cuéntanos cualquier detalle extra."></textarea></label>
+          <button type="submit" class="btn btn-primary full-width">Solicitar cotización</button>
+        </form>
       </div>
     </section>
 
     <section class="trust section-pad">
       <div class="trust-panel">
-        <div><p class="eyebrow">Confianza</p><h2>Información clara antes de comprar.</h2><p>Consulta productos, contacto, políticas y canales disponibles antes de tomar tu decisión.</p></div>
+        <div><p class="eyebrow">Confianza</p><h2>Información clara antes de comprar.</h2><p>Consulta productos, marcos, contacto, políticas y canales disponibles antes de tomar tu decisión.</p></div>
         <div class="trust-grid">
           <div>Compra preparada mediante Shopify</div>
           <div>Contacto directo por WhatsApp</div>
@@ -558,6 +790,49 @@
       </div>
     </section>
   </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compra" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">FRAME POSTER</p>
+        <h2>Tu carrito</h2>
+      </div>
+      <button type="button" class="cart-close" id="cartCloseButton" aria-label="Cerrar carrito">Cerrar</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="empty-cart">Tu carrito está vacío. Agrega un poster para verlo aquí.</p>
+    </div>
+    <div class="cart-summary">
+      <p class="frame-note">Marco incluido sin costo adicional en esta versión.</p>
+      <div><span>Subtotal</span><strong id="cartSubtotal">$0 MXN</strong></div>
+      <div><span>Envío</span><strong>Gratis</strong></div>
+      <div class="total-row"><span>Total</span><strong id="cartTotal">$0 MXN</strong></div>
+      <!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
+      <button type="button" class="checkout-button" id="checkoutButton">Pagar ahora</button>
+      <button type="button" class="continue-button" id="continueShoppingButton">Seguir explorando</button>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <div class="preview-modal" id="previewModal" aria-hidden="true">
+    <div class="preview-dialog">
+      <button type="button" class="modal-close" id="previewCloseButton" aria-label="Cerrar preview">×</button>
+      <div class="preview-frame frame-negro" id="previewFrame">
+        <img src="" alt="" id="previewImage">
+      </div>
+      <div class="preview-info">
+        <p class="eyebrow">Preview con marco</p>
+        <h2 id="previewTitle">Poster</h2>
+        <p id="previewPrice">$0 MXN</p>
+        <div class="preview-specs">
+          <span id="previewFrameLabel">Marco: Negro</span>
+          <span>Medidas: 48 cm x 60 cm</span>
+          <span>Impresión de ultra calidad</span>
+        </div>
+        <button type="button" class="btn btn-primary full-width" id="previewAddButton">Agregar al carrito con este marco</button>
+      </div>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="footer-main">

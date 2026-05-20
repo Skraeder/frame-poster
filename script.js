@@ -3,15 +3,45 @@ const navMenu = document.getElementById("navMenu");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const productCards = document.querySelectorAll(".product-card");
 const sellerForm = document.getElementById("sellerForm");
+const quoteForm = document.getElementById("quoteForm");
 const toast = document.getElementById("toast");
 const categoryLinks = document.querySelectorAll("[data-filter-link]");
 const buyButtons = document.querySelectorAll(".buy-button");
+const previewButtons = document.querySelectorAll(".preview-button");
 const catalogStatus = document.getElementById("catalogStatus");
 const cookieBanner = document.getElementById("cookieBanner");
 const acceptCookies = document.getElementById("acceptCookies");
 
+const cartOpenButton = document.getElementById("cartOpenButton");
+const cartCloseButton = document.getElementById("cartCloseButton");
+const continueShoppingButton = document.getElementById("continueShoppingButton");
+const cartDrawer = document.getElementById("cartDrawer");
+const cartOverlay = document.getElementById("cartOverlay");
+const cartItems = document.getElementById("cartItems");
+const cartSubtotal = document.getElementById("cartSubtotal");
+const cartTotal = document.getElementById("cartTotal");
+const checkoutButton = document.getElementById("checkoutButton");
+
+const frameOptions = document.querySelectorAll(".frame-option");
+const previewModal = document.getElementById("previewModal");
+const previewCloseButton = document.getElementById("previewCloseButton");
+const previewFrame = document.getElementById("previewFrame");
+const previewImage = document.getElementById("previewImage");
+const previewTitle = document.getElementById("previewTitle");
+const previewPrice = document.getElementById("previewPrice");
+const previewFrameLabel = document.getElementById("previewFrameLabel");
+const previewAddButton = document.getElementById("previewAddButton");
+
+let selectedFrame = { name: "Negro", className: "frame-negro" };
+let cart = [];
+let currentPreviewProduct = null;
+
 function trackEvent(eventName) {
   console.log("Evento:", eventName);
+}
+
+function formatMXN(value) {
+  return `$${Number(value).toLocaleString("es-MX")} MXN`;
 }
 
 function showToast(message) {
@@ -53,6 +83,117 @@ function filterProducts(category) {
   trackEvent(`filtro:${category}`);
 }
 
+function getProductFromCard(card) {
+  return {
+    name: card.dataset.name,
+    price: Number(card.dataset.price),
+    image: card.dataset.image,
+    frame: selectedFrame.name,
+    frameClass: selectedFrame.className,
+  };
+}
+
+function updateCartButton() {
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  if (cartOpenButton) cartOpenButton.textContent = `Carrito (${count})`;
+}
+
+function cartSubtotalValue() {
+  return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+}
+
+function renderCart() {
+  updateCartButton();
+
+  if (!cartItems || !cartSubtotal || !cartTotal) return;
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = '<p class="empty-cart">Tu carrito está vacío. Agrega un poster para verlo aquí.</p>';
+  } else {
+    cartItems.innerHTML = cart.map((item) => `
+      <article class="cart-item" data-key="${item.key}">
+        <img src="${item.image}" alt="${item.name}">
+        <div>
+          <h3>${item.name}</h3>
+          <p>Marco: ${item.frame}</p>
+          <p>Precio unitario: ${formatMXN(item.price)}</p>
+          <p>Subtotal: ${formatMXN(item.price * item.quantity)}</p>
+          <div class="cart-row-actions">
+            <div class="qty-control">
+              <button class="qty-btn" type="button" data-action="decrease" data-key="${item.key}">−</button>
+              <strong>${item.quantity}</strong>
+              <button class="qty-btn" type="button" data-action="increase" data-key="${item.key}">+</button>
+            </div>
+            <button class="cart-remove" type="button" data-action="remove" data-key="${item.key}">Eliminar</button>
+          </div>
+        </div>
+      </article>
+    `).join("");
+  }
+
+  const subtotal = cartSubtotalValue();
+  cartSubtotal.textContent = formatMXN(subtotal);
+  cartTotal.textContent = formatMXN(subtotal);
+}
+
+function addToCart(product) {
+  const key = `${product.name}__${product.frame}`;
+  const existing = cart.find((item) => item.key === key);
+
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ ...product, key, quantity: 1 });
+  }
+
+  renderCart();
+  openCart();
+  showToast(`${product.name} agregado con marco ${product.frame}.`);
+  trackEvent(`carrito_agregar:${product.name}:${product.frame}`);
+}
+
+function openCart() {
+  document.body.classList.add("cart-open");
+  if (cartDrawer) cartDrawer.setAttribute("aria-hidden", "false");
+}
+
+function closeCart() {
+  document.body.classList.remove("cart-open");
+  if (cartDrawer) cartDrawer.setAttribute("aria-hidden", "true");
+}
+
+function updatePreviewFrameClass() {
+  if (!previewFrame) return;
+  previewFrame.classList.remove("frame-cafe", "frame-negro", "frame-beige");
+  previewFrame.classList.add(selectedFrame.className);
+  if (previewFrameLabel) previewFrameLabel.textContent = `Marco: ${selectedFrame.name}`;
+}
+
+function openPreview(product) {
+  currentPreviewProduct = product;
+  if (previewImage) {
+    previewImage.src = product.image;
+    previewImage.alt = product.name;
+  }
+  if (previewTitle) previewTitle.textContent = product.name;
+  if (previewPrice) previewPrice.textContent = formatMXN(product.price);
+  updatePreviewFrameClass();
+  if (previewModal) {
+    previewModal.classList.add("is-open");
+    previewModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+  }
+  trackEvent(`preview_marco:${product.name}:${selectedFrame.name}`);
+}
+
+function closePreview() {
+  if (previewModal) {
+    previewModal.classList.remove("is-open");
+    previewModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  }
+}
+
 if (mobileMenuButton) {
   mobileMenuButton.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("is-open");
@@ -79,37 +220,120 @@ categoryLinks.forEach((link) => {
   });
 });
 
-buyButtons.forEach((button) => {
+frameOptions.forEach((button) => {
   button.addEventListener("click", () => {
-    trackEvent(button.dataset.track || "clic_compra_temporal");
-    showToast("Botón temporal. Aquí se conectará Shopify Buy Button.");
+    selectedFrame = {
+      name: button.dataset.frame,
+      className: button.dataset.frameClass,
+    };
+    frameOptions.forEach((option) => option.classList.remove("selected"));
+    button.classList.add("selected");
+    updatePreviewFrameClass();
+    showToast(`Marco seleccionado: ${selectedFrame.name}`);
+    trackEvent(`marco:${selectedFrame.name}`);
   });
 });
 
-document.querySelectorAll("[data-track]").forEach((element) => {
-  element.addEventListener("click", () => {
-    trackEvent(element.dataset.track);
+buyButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".product-card");
+    addToCart(getProductFromCard(card));
   });
+});
+
+previewButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".product-card");
+    openPreview(getProductFromCard(card));
+  });
+});
+
+if (previewAddButton) {
+  previewAddButton.addEventListener("click", () => {
+    if (!currentPreviewProduct) return;
+    addToCart({
+      ...currentPreviewProduct,
+      frame: selectedFrame.name,
+      frameClass: selectedFrame.className,
+    });
+    closePreview();
+  });
+}
+
+if (previewCloseButton) previewCloseButton.addEventListener("click", closePreview);
+if (previewModal) {
+  previewModal.addEventListener("click", (event) => {
+    if (event.target === previewModal) closePreview();
+  });
+}
+
+if (cartOpenButton) cartOpenButton.addEventListener("click", openCart);
+if (cartCloseButton) cartCloseButton.addEventListener("click", closeCart);
+if (continueShoppingButton) continueShoppingButton.addEventListener("click", closeCart);
+if (cartOverlay) cartOverlay.addEventListener("click", closeCart);
+
+if (cartItems) {
+  cartItems.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-action]");
+    if (!button) return;
+
+    const key = button.dataset.key;
+    const action = button.dataset.action;
+    const item = cart.find((cartItem) => cartItem.key === key);
+
+    if (!item) return;
+
+    if (action === "increase") {
+      item.quantity += 1;
+    }
+
+    if (action === "decrease") {
+      item.quantity -= 1;
+      if (item.quantity <= 0) cart = cart.filter((cartItem) => cartItem.key !== key);
+    }
+
+    if (action === "remove") {
+      cart = cart.filter((cartItem) => cartItem.key !== key);
+    }
+
+    renderCart();
+  });
+}
+
+if (checkoutButton) {
+  checkoutButton.addEventListener("click", () => {
+    if (cart.length === 0) {
+      showToast("Tu carrito está vacío.");
+      return;
+    }
+    showToast("Checkout pendiente de conexión con Shopify Buy Button.");
+    trackEvent("checkout_temporal");
+  });
+}
+
+document.querySelectorAll("[data-track]").forEach((element) => {
+  element.addEventListener("click", () => trackEvent(element.dataset.track));
 });
 
 document.querySelectorAll(".product-image").forEach((button) => {
-  button.addEventListener("click", () => {
-    trackEvent(button.dataset.track || "clic_producto");
-  });
+  button.addEventListener("click", () => trackEvent(button.dataset.track || "clic_producto"));
 });
 
 if (sellerForm) {
   sellerForm.addEventListener("submit", () => {
-    trackEvent("formulario_enviado");
-    // No se bloquea el envío: Formspree procesa el formulario real.
+    trackEvent("formulario_vendedores_enviado");
+  });
+}
+
+if (quoteForm) {
+  quoteForm.addEventListener("submit", () => {
+    trackEvent("formulario_cotizacion_enviado");
   });
 }
 
 if (cookieBanner && acceptCookies) {
   const acceptedCookies = localStorage.getItem("framePosterCookiesAccepted");
-  if (!acceptedCookies) {
-    cookieBanner.classList.add("show");
-  }
+  if (!acceptedCookies) cookieBanner.classList.add("show");
 
   acceptCookies.addEventListener("click", () => {
     localStorage.setItem("framePosterCookiesAccepted", "true");
@@ -119,7 +343,12 @@ if (cookieBanner && acceptCookies) {
 }
 
 window.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeMobileMenu();
+  if (event.key === "Escape") {
+    closeMobileMenu();
+    closeCart();
+    closePreview();
+  }
 });
 
 filterProducts("Todos");
+renderCart();
