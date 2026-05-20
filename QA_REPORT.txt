@@ -1,16 +1,14 @@
-QA FRAME POSTER FINAL LIMPIO
+QA FRAME POSTER CLIENTE FINAL
 
-index_no_id_analytics: OK
-index_no_id_terminos: OK
-index_no_id_privacidad: OK
-index_no_analytics_visible: OK
-index_has_terms_link: OK
-index_has_privacy_link: OK
-index_has_contact_link: OK
-index_has_formspree: OK
-script_no_prevent_default: OK
+no_forbidden_public_content: OK
+has_terms_link: OK
+has_privacy_link: OK
+has_contact_link: OK
+has_formspree: OK
+has_whatsapp: OK
+has_instagram: OK
+has_qr_ref: OK
 qr_exists: OK
-instagram_correct: OK
-whatsapp_correct: OK
 no_broken_asset_refs: OK
-all_required_assets: OK
+no_preventDefault: OK
+instagram_css_visible: OK
