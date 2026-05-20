@@ -1,18 +1,17 @@
-QA FRAME POSTER CARRITO MARCOS FINAL
+QA FRAME POSTER PREVIEW MARCOS AMBIENTES FINAL
 
-header_no_whatsapp_button: OK
-header_has_cart: OK
-cart_drawer_exists: OK
-cart_total_exists: OK
-checkout_button_exists: OK
-frames_three_options: OK
-preview_exists: OK
-specs_visible: OK
-quote_form_formspree: OK
-seller_form_formspree: OK
-no_prevent_default: OK
-no_internal_sections: OK
-instagram_visible_css: OK
-qr_exists: OK
-whatsapp_contact_exists: OK
-no_broken_assets: OK
+preview_no_borde_plano: OK
+marco_negro_realista: OK
+marco_cafe_realista: OK
+marco_beige_realista: OK
+ambientes_cuatro: OK
+ambientes_assets: OK
+poster_en_pared: OK
+no_textos_removidos: OK
+copy_nuevo: OK
+carrito_funcional: OK
+selector_marco_funcional: OK
+responsive: OK
+menu_movil: OK
+sin_assets_rotos: OK
+qr_correcto_presente: OK

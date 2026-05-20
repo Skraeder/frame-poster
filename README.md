@@ -1,6 +1,6 @@
-# FRAME POSTER - Carrito y marcos final
+# FRAME POSTER - Preview con marcos y ambientes
 
-Esta carpeta contiene la versión final con carrito funcional, selector de marco, preview del poster con marco y cotización de medidas especiales.
+Esta carpeta contiene la versión final con preview mejorado para visualizar cada poster enmarcado dentro de distintos ambientes.
 
 ## Incluye
 
@@ -13,29 +13,30 @@ Esta carpeta contiene la versión final con carrito funcional, selector de marco
 - `assets/`
   - 20 imágenes de posters
   - `frame_poster_qr.png`
+  - ambientes de preview:
+    - `ambiente-cafe.png`
+    - `ambiente-azul.png`
+    - `ambiente-blanco.svg`
+    - `ambiente-negro.svg`
 
-## Funciones principales
+## Cambios principales
 
-- Botón de carrito en header.
-- Carrito funcional con contador dinámico.
-- Panel lateral de carrito.
-- Productos agregados con nombre, imagen, precio, cantidad y marco seleccionado.
-- Suma automática de subtotal y total.
-- Envío gratis visible.
-- Selector de marco:
+- El preview ya no usa un borde plano: ahora el marco tiene grosor, profundidad, sombra y apariencia más realista.
+- Marcos disponibles:
   - Café madera
   - Negro
   - Beige
-- Preview del poster con marco.
-- Agregar al carrito desde preview.
-- Especificaciones visibles:
-  - 48 cm x 60 cm
-  - Ultra calidad
-  - Marco opcional
-- Formulario de cotización de medidas especiales.
-- Formulario “Vende con nosotros”.
-- Ambos formularios usan Formspree:
-  `https://formspree.io/f/xvzykgpd`
+- Ambientes disponibles:
+  - Café cálido
+  - Azul texturizado
+  - Blanco
+  - Negro
+- Cada ambiente muestra una pared con elementos de interior para visualizar mejor el poster.
+- Las especificaciones ahora usan el texto “Impresión premium”.
+- Las especificaciones ahora indican “Marco incluido”.
+- El carrito conserva el marco seleccionado y también muestra el ambiente elegido.
+- Se mantiene Formspree para cotización y “Vende con nosotros”.
+- Se mantienen WhatsApp, Instagram, QR, términos y privacidad.
 
 ## Subir a GitHub
 
@@ -49,19 +50,12 @@ Esta carpeta contiene la versión final con carrito funcional, selector de marco
    - `README.md`
    - carpeta `assets`
 3. Haz commit con:
-   `Subir carrito y marcos de Frame Poster`
-4. Espera el despliegue automático en Vercel.
+   `Actualizar preview con marcos y ambientes`
+4. Espera el despliegue automático de Vercel.
 5. Prueba:
    - carrito
    - selector de marco
    - preview con marco
-   - formulario de cotización
-   - formulario “Vende con nosotros”
-   - WhatsApp
-   - Instagram
-   - QR
+   - cambio de ambientes / paredes
+   - WhatsApp, Instagram y QR
    - términos y privacidad
-
-## Nota
-
-El botón “Pagar ahora” es temporal hasta conectar Shopify Buy Button.

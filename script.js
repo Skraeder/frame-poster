@@ -26,13 +26,18 @@ const frameOptions = document.querySelectorAll(".frame-option");
 const previewModal = document.getElementById("previewModal");
 const previewCloseButton = document.getElementById("previewCloseButton");
 const previewFrame = document.getElementById("previewFrame");
+const roomPreview = document.getElementById("roomPreview");
 const previewImage = document.getElementById("previewImage");
 const previewTitle = document.getElementById("previewTitle");
 const previewPrice = document.getElementById("previewPrice");
 const previewFrameLabel = document.getElementById("previewFrameLabel");
+const previewEnvironmentLabel = document.getElementById("previewEnvironmentLabel");
 const previewAddButton = document.getElementById("previewAddButton");
+const previewFrameButtons = document.querySelectorAll(".preview-frame-btn");
+const previewEnvironmentButtons = document.querySelectorAll(".preview-env-btn");
 
 let selectedFrame = { name: "Negro", className: "frame-negro" };
+let selectedEnvironment = { name: "Café cálido", className: "env-cafe" };
 let cart = [];
 let currentPreviewProduct = null;
 
@@ -90,6 +95,8 @@ function getProductFromCard(card) {
     image: card.dataset.image,
     frame: selectedFrame.name,
     frameClass: selectedFrame.className,
+    environment: selectedEnvironment.name,
+    environmentClass: selectedEnvironment.className,
   };
 }
 
@@ -115,7 +122,7 @@ function renderCart() {
         <img src="${item.image}" alt="${item.name}">
         <div>
           <h3>${item.name}</h3>
-          <p>Marco: ${item.frame}</p>
+          <p>Marco: ${item.frame}</p><p>Ambiente: ${item.environment || "Café cálido"}</p>
           <p>Precio unitario: ${formatMXN(item.price)}</p>
           <p>Subtotal: ${formatMXN(item.price * item.quantity)}</p>
           <div class="cart-row-actions">
@@ -137,7 +144,7 @@ function renderCart() {
 }
 
 function addToCart(product) {
-  const key = `${product.name}__${product.frame}`;
+  const key = `${product.name}__${product.frame}__${product.environment || selectedEnvironment.name}`;
   const existing = cart.find((item) => item.key === key);
 
   if (existing) {
@@ -163,10 +170,26 @@ function closeCart() {
 }
 
 function updatePreviewFrameClass() {
-  if (!previewFrame) return;
-  previewFrame.classList.remove("frame-cafe", "frame-negro", "frame-beige");
-  previewFrame.classList.add(selectedFrame.className);
+  if (previewFrame) {
+    previewFrame.classList.remove("frame-cafe", "frame-negro", "frame-beige");
+    previewFrame.classList.add(selectedFrame.className);
+  }
+
+  if (roomPreview) {
+    roomPreview.classList.remove("env-cafe", "env-azul", "env-blanco", "env-negro");
+    roomPreview.classList.add(selectedEnvironment.className);
+  }
+
   if (previewFrameLabel) previewFrameLabel.textContent = `Marco: ${selectedFrame.name}`;
+  if (previewEnvironmentLabel) previewEnvironmentLabel.textContent = `Ambiente: ${selectedEnvironment.name}`;
+
+  previewFrameButtons.forEach((button) => {
+    button.classList.toggle("selected", button.dataset.frame === selectedFrame.name);
+  });
+
+  previewEnvironmentButtons.forEach((button) => {
+    button.classList.toggle("selected", button.dataset.env === selectedEnvironment.name);
+  });
 }
 
 function openPreview(product) {
@@ -234,6 +257,31 @@ frameOptions.forEach((button) => {
   });
 });
 
+previewFrameButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    selectedFrame = {
+      name: button.dataset.frame,
+      className: button.dataset.frameClass,
+    };
+    frameOptions.forEach((option) => {
+      option.classList.toggle("selected", option.dataset.frame === selectedFrame.name);
+    });
+    updatePreviewFrameClass();
+    trackEvent(`preview_marco_selector:${selectedFrame.name}`);
+  });
+});
+
+previewEnvironmentButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    selectedEnvironment = {
+      name: button.dataset.env,
+      className: button.dataset.envClass,
+    };
+    updatePreviewFrameClass();
+    trackEvent(`preview_ambiente:${selectedEnvironment.name}`);
+  });
+});
+
 buyButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const card = button.closest(".product-card");
@@ -255,6 +303,8 @@ if (previewAddButton) {
       ...currentPreviewProduct,
       frame: selectedFrame.name,
       frameClass: selectedFrame.className,
+      environment: selectedEnvironment.name,
+      environmentClass: selectedEnvironment.className,
     });
     closePreview();
   });
