@@ -1,17 +1,12 @@
-QA FRAME POSTER PREVIEW MARCOS AMBIENTES FINAL
+QA FRAME POSTER CSS FRAMES FINAL
 
-preview_no_borde_plano: OK
-marco_negro_realista: OK
-marco_cafe_realista: OK
-marco_beige_realista: OK
-ambientes_cuatro: OK
-ambientes_assets: OK
-poster_en_pared: OK
-no_textos_removidos: OK
-copy_nuevo: OK
-carrito_funcional: OK
-selector_marco_funcional: OK
-responsive: OK
-menu_movil: OK
-sin_assets_rotos: OK
-qr_correcto_presente: OK
+no_frame_png_references: OK
+css_frame_exists: OK
+straight_corners: OK
+walls_exist: OK
+copy_ok: OK
+no_forbidden_text: OK
+cart_ok: OK
+preview_ok: OK
+forms_not_blocked: OK
+no_broken_assets: OK
