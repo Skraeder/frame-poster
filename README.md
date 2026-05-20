@@ -1,26 +1,32 @@
-# FRAME POSTER - Marketplace V3
+# FRAME POSTER - eCommerce Ready
 
-Versión actualizada con:
+Versión final de la página con secciones para cumplir mejor la rúbrica del proyecto de eCommerce.
 
-- 20 productos.
-- Filtros por colección.
-- Botones "Ver colección" que filtran y hacen scroll al catálogo.
-- Sección de paleta visual.
-- Sección "Colecciones visuales" sin vendedores inventados.
-- Fondos intercalados por sección.
+## Incluye
+
+- Catálogo de 20 posters.
+- Filtros funcionales por colección.
+- Botones Ver colección con scroll y filtro.
+- Compra segura preparada con Shopify.
+- Modelo de negocio.
+- Marketing: SEO, SEM, email, redes, funnel y presupuesto.
+- Operación: inventario, fulfillment, envío, tracking, atención y devoluciones.
+- Analytics: métricas objetivo, herramientas y eventos.
+- Cookie banner con localStorage.
+- Contacto con WhatsApp e Instagram.
+- Términos y aviso de privacidad.
 - Preparación para Shopify Buy Button.
 
-## Archivos principales
+## Subir a GitHub
+
+Reemplaza estos archivos en tu repositorio:
 
 - index.html
 - styles.css
 - script.js
+- README.md
 - assets/
 
-## Importante para Shopify
+Commit sugerido:
 
-Cada producto conserva este comentario:
-
-<!-- PEGAR AQUÍ EL SHOPIFY BUY BUTTON DEL PRODUCTO -->
-
-Ahí puedes reemplazar el botón temporal por el embed real de Shopify Buy Button.
+Actualizar web final con estrategia eCommerce y analytics
