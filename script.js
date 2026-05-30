@@ -59,7 +59,15 @@ function openPreview(product) { currentPreviewProduct = product; if (previewImag
 function closePreview() { if (previewModal) { previewModal.classList.remove("is-open"); previewModal.setAttribute("aria-hidden", "true"); document.body.classList.remove("modal-open"); } }
 
 if (mobileMenuButton) { mobileMenuButton.addEventListener("click", () => { const isOpen = navMenu.classList.toggle("is-open"); document.body.classList.toggle("menu-open", isOpen); mobileMenuButton.setAttribute("aria-expanded", String(isOpen)); }); }
-document.querySelectorAll('a[href^="#"]').forEach((link) => link.addEventListener("click", closeMobileMenu));
+document.querySelectorAll('a[href="#inicio"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    closeMobileMenu();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (window.location.hash) history.replaceState(null, "", window.location.pathname);
+  });
+});
+document.querySelectorAll('a[href^="#"]:not([href="#inicio"])').forEach((link) => link.addEventListener("click", closeMobileMenu));
 filterButtons.forEach((button) => button.addEventListener("click", () => filterProducts(button.dataset.filter)));
 categoryLinks.forEach((link) => { link.addEventListener("click", () => { filterProducts(link.dataset.filterLink); closeMobileMenu(); }); });
 frameOptions.forEach((button) => { button.addEventListener("click", () => { selectedFrame = { name: button.dataset.frame, className: button.dataset.frameClass }; updatePreviewVisual(); showToast(`Marco seleccionado: ${selectedFrame.name}`); trackEvent(`marco:${selectedFrame.name}`); }); });
