@@ -21,6 +21,8 @@ const cartItems = document.getElementById("cartItems");
 const cartSubtotal = document.getElementById("cartSubtotal");
 const cartTotal = document.getElementById("cartTotal");
 const checkoutButton = document.getElementById("checkoutButton");
+const buyerNameInput = document.getElementById("buyerName");
+const buyerEmailInput = document.getElementById("buyerEmail");
 
 const frameOptions = document.querySelectorAll(".frame-option");
 const previewModal = document.getElementById("previewModal");
@@ -90,6 +92,18 @@ if (checkoutButton) {
       return;
     }
 
+    const customer = {
+      name: buyerNameInput ? buyerNameInput.value.trim() : "",
+      email: buyerEmailInput ? buyerEmailInput.value.trim().toLowerCase() : ""
+    };
+
+    if (!customer.name || !customer.email || !customer.email.includes("@")) {
+      showToast("Agrega tu nombre y correo para enviar el recibo.");
+      if (!customer.name && buyerNameInput) buyerNameInput.focus();
+      else if (buyerEmailInput) buyerEmailInput.focus();
+      return;
+    }
+
     checkoutButton.disabled = true;
     const originalText = checkoutButton.textContent;
     checkoutButton.textContent = "Conectando con Mercado Pago...";
@@ -98,7 +112,7 @@ if (checkoutButton) {
       const response = await fetch("/api/create-preference", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cart })
+        body: JSON.stringify({ cart, customer })
       });
 
       const data = await response.json();
@@ -107,6 +121,10 @@ if (checkoutButton) {
         console.error("Mercado Pago error:", data);
         showToast("No se pudo iniciar el pago. Intenta de nuevo.");
         return;
+      }
+
+      if (data.order) {
+        localStorage.setItem("framePosterPendingOrder", JSON.stringify(data.order));
       }
 
       trackEvent("checkout_mercado_pago");

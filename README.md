@@ -41,3 +41,23 @@ Esta carpeta contiene la versión final lista para GitHub y Vercel.
 8. Prueba preview.
 9. Prueba WhatsApp, Instagram y QR.
 10. Prueba términos y privacidad.
+
+## Receipt Email Setup
+
+This version includes a post-purchase receipt flow:
+
+- The customer enters name and email before checkout.
+- After a successful Mercado Pago payment, the success page calls `/api/send-receipt`.
+- The customer receives a styled purchase receipt.
+- The store owner receives a styled new-order notification.
+
+Required Vercel environment variables:
+
+```txt
+MP_ACCESS_TOKEN=your_mercado_pago_production_access_token
+RESEND_API_KEY=your_resend_api_key
+STORE_EMAIL=your_store_email@example.com
+RECEIPT_FROM=FRAME POSTER <onboarding@resend.dev>
+```
+
+For a production sender, replace `RECEIPT_FROM` with a verified domain sender in Resend.

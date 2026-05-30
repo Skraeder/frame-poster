@@ -234,3 +234,59 @@ h3 { letter-spacing: -.04em; line-height: 1.08; }
 @media (max-width: 1020px) { .header-cta { display: none; } .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 64px; } .hero-visual { min-height: 520px; } .three, .product-grid, .quote-layout { grid-template-columns: repeat(2, 1fr); } .steps-grid { grid-template-columns: repeat(2, 1fr); } .trust-panel, .sell-section, .footer-main, .preview-dialog { grid-template-columns: 1fr; } .preview-wall { min-height: 430px; } .mockup-frame { width: clamp(190px, 42%, 280px); } }
 @media (max-width: 760px) { .section-pad, .hero, .value-section, .categories, .frame-section, .specs-section, .products, .collections, .safe-checkout, .how-it-works, .quote-section, .trust, .sell-section, .contact, .legal-hero, .legal-page-section { padding-top: 62px; padding-bottom: 62px; padding-left: 14px; padding-right: 14px; } .navbar { width: min(100% - 28px, var(--max-width)); min-height: 68px; } .mobile-menu-button { display: block; position: relative; z-index: 70; } .nav-menu { position: fixed; inset: 68px 14px auto 14px; display: none; flex-direction: column; align-items: stretch; gap: 0; background: rgba(255,255,255,.96); border: 1px solid var(--line); border-radius: 24px; padding: 12px; box-shadow: var(--shadow); } .nav-menu.is-open { display: flex; } .nav-menu a { display: block; padding: 14px; border-radius: 14px; } h1 { font-size: clamp(3.05rem, 18vw, 5rem); } h2 { font-size: clamp(2.1rem, 11vw, 3.2rem); } .hero-stats, .split, .three, .four, .category-grid, .collection-grid, .product-grid, .steps-grid, .trust-grid, .contact-card-grid, .frame-options, .spec-grid, .quote-layout { grid-template-columns: 1fr; } .hero-visual { min-height: 470px; border-radius: 30px; } .gallery-wall { inset: 18px; } .poster-card-large { width: 220px; } .poster-card-small { width: 150px; } .poster-card-small .poster-art { min-height: 130px; } .editorial-strip div { display: block; } .editorial-strip p { text-align: left; margin-top: 10px; } .product-image { min-height: 320px; } .contact-card, .trust-panel { padding: 26px; border-radius: 28px; } .seller-form, .quote-form { padding: 20px; } .footer-links { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; } .cookie-banner { left: 12px; right: 12px; bottom: 76px; max-width: none; flex-direction: column; align-items: flex-start; } .cookie-banner div { width: 100%; justify-content: space-between; } .cart-drawer { width: calc(100vw - 10px); padding: 18px; } .preview-dialog { padding: 16px; max-height: 92vh; overflow: auto; border-radius: 24px; } .preview-wall { min-height: 350px; border-radius: 18px; } .mockup-frame { width: clamp(160px, 50%, 230px); padding: 15px; } .frame-bevel { padding: 14px; } .frame-mat { padding: 10px; } }
 @media (max-width: 420px) { .hero-actions, .filter-bar, .contact-actions { flex-direction: column; } .btn, .filter-btn { width: 100%; text-align: center; justify-content: center; } .poster-card-large { width: 196px; } .top-card { top: 36px; } .bottom-card { bottom: 38px; } .preview-button-row { gap: 6px; } .preview-frame-btn, .preview-wall-btn { padding: 9px 11px; } }
+
+/* Buyer receipt fields */
+.buyer-form {
+  margin: 18px 0 16px;
+  padding: 16px;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  border-radius: 18px;
+  background: #fbfaf7;
+}
+
+.buyer-form-title {
+  margin: 0 0 12px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.buyer-form label {
+  display: block;
+  margin: 10px 0 6px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5f5a52;
+}
+
+.buyer-form input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(17, 17, 17, 0.18);
+  border-radius: 12px;
+  padding: 12px 13px;
+  font: inherit;
+  background: #ffffff;
+  color: #111111;
+  outline: none;
+}
+
+.buyer-form input:focus {
+  border-color: #111111;
+}
+
+.buyer-form-note {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #6f6860;
+}
+
+.receipt-status-box {
+  margin-top: 24px;
+  padding: 16px 18px;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  border-radius: 18px;
+  background: #fbfaf7;
+  color: #2b2b2b;
+}

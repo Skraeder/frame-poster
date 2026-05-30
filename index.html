@@ -843,6 +843,16 @@
       <div><span>Subtotal</span><strong id="cartSubtotal">$0 MXN</strong></div>
       <div><span>Envío</span><strong>Gratis</strong></div>
       <div class="total-row"><span>Total</span><strong id="cartTotal">$0 MXN</strong></div>
+
+      <div class="buyer-form" aria-label="Datos para recibo de compra">
+        <p class="buyer-form-title">Datos para enviar tu recibo</p>
+        <label for="buyerName">Nombre completo</label>
+        <input type="text" id="buyerName" name="buyerName" autocomplete="name" placeholder="Ej. Ana López">
+        <label for="buyerEmail">Correo electrónico</label>
+        <input type="email" id="buyerEmail" name="buyerEmail" autocomplete="email" placeholder="cliente@email.com">
+        <p class="buyer-form-note">Usaremos estos datos para enviar la confirmación de compra.</p>
+      </div>
+
       <!-- Botón conectado a Mercado Pago Checkout Pro -->
       <button type="button" class="checkout-button" id="checkoutButton">Pagar ahora</button>
       <button type="button" class="continue-button" id="continueShoppingButton">Seguir explorando</button>

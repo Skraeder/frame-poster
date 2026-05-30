@@ -10,10 +10,20 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: "Missing Mercado Pago access token" });
     }
 
-    const { cart } = req.body || {};
+    const { cart, customer } = req.body || {};
 
     if (!Array.isArray(cart) || cart.length === 0) {
       return res.status(400).json({ error: "Cart is empty" });
+    }
+
+    const cleanCustomer = {
+      name: String(customer?.name || "").trim(),
+      email: String(customer?.email || "").trim().toLowerCase(),
+      phone: String(customer?.phone || "").trim()
+    };
+
+    if (!cleanCustomer.name || !cleanCustomer.email || !cleanCustomer.email.includes("@")) {
+      return res.status(400).json({ error: "Customer name and email are required" });
     }
 
     const items = cart.map((item) => {
@@ -32,10 +42,21 @@ export default async function handler(req, res) {
       };
     });
 
+    const orderId = `FP-${Date.now().toString(36).toUpperCase()}`;
     const origin = req.headers.origin || `https://${req.headers.host}`;
 
     const preference = {
       items,
+      payer: {
+        name: cleanCustomer.name,
+        email: cleanCustomer.email
+      },
+      external_reference: orderId,
+      metadata: {
+        order_id: orderId,
+        customer_name: cleanCustomer.name,
+        customer_email: cleanCustomer.email
+      },
       back_urls: {
         success: `${origin}/success.html`,
         failure: `${origin}/failure.html`,
@@ -68,7 +89,16 @@ export default async function handler(req, res) {
       ? data.sandbox_init_point || data.init_point
       : data.init_point || data.sandbox_init_point;
 
-    return res.status(200).json({ checkoutUrl });
+    return res.status(200).json({
+      checkoutUrl,
+      order: {
+        orderId,
+        customer: cleanCustomer,
+        cart,
+        total: cart.reduce((sum, item) => sum + Number(item.price || 0) * Number(item.quantity || 1), 0),
+        createdAt: new Date().toISOString()
+      }
+    });
   } catch (error) {
     return res.status(500).json({
       error: "Error creating Mercado Pago preference",
