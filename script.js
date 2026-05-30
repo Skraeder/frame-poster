@@ -75,7 +75,43 @@ if (cartCloseButton) cartCloseButton.addEventListener("click", closeCart);
 if (continueShoppingButton) continueShoppingButton.addEventListener("click", closeCart);
 if (cartOverlay) cartOverlay.addEventListener("click", closeCart);
 if (cartItems) { cartItems.addEventListener("click", (event) => { const button = event.target.closest("button[data-action]"); if (!button) return; const key = button.dataset.key; const action = button.dataset.action; const item = cart.find((cartItem) => cartItem.key === key); if (!item) return; if (action === "increase") item.quantity += 1; if (action === "decrease") { item.quantity -= 1; if (item.quantity <= 0) cart = cart.filter((cartItem) => cartItem.key !== key); } if (action === "remove") cart = cart.filter((cartItem) => cartItem.key !== key); renderCart(); }); }
-if (checkoutButton) { checkoutButton.addEventListener("click", () => { if (cart.length === 0) { showToast("Tu carrito está vacío."); return; } showToast("Checkout pendiente de conexión con Shopify Buy Button."); trackEvent("checkout_temporal"); }); }
+if (checkoutButton) {
+  checkoutButton.addEventListener("click", async () => {
+    if (cart.length === 0) {
+      showToast("Tu carrito está vacío.");
+      return;
+    }
+
+    checkoutButton.disabled = true;
+    const originalText = checkoutButton.textContent;
+    checkoutButton.textContent = "Conectando con Mercado Pago...";
+
+    try {
+      const response = await fetch("/api/create-preference", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ cart })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.checkoutUrl) {
+        console.error("Mercado Pago error:", data);
+        showToast("No se pudo iniciar el pago. Intenta de nuevo.");
+        return;
+      }
+
+      trackEvent("checkout_mercado_pago");
+      window.location.href = data.checkoutUrl;
+    } catch (error) {
+      console.error("Checkout error:", error);
+      showToast("Hubo un error al conectar con Mercado Pago.");
+    } finally {
+      checkoutButton.disabled = false;
+      checkoutButton.textContent = originalText;
+    }
+  });
+}
 document.querySelectorAll("[data-track]").forEach((element) => element.addEventListener("click", () => trackEvent(element.dataset.track)));
 document.querySelectorAll(".product-image").forEach((button) => button.addEventListener("click", () => trackEvent(button.dataset.track || "clic_producto")));
 if (sellerForm) sellerForm.addEventListener("submit", () => trackEvent("formulario_vendedores_enviado"));
