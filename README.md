@@ -1,57 +1,34 @@
-# FRAME POSTER - Preview con paredes y marcos CSS
+# FRAME POSTER
 
-Esta carpeta contiene la versión final lista para GitHub y Vercel.
+FRAME POSTER is an editorial-style eCommerce project focused on curated poster collections, visual storytelling, and a clean online shopping experience.
 
-## Incluye
+The website works as a digital gallery where users can explore poster collections, preview products with different frame and wall combinations, add items to a cart, and complete payment through Mercado Pago Checkout Pro.
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `terminos.html`
-- `privacidad.html`
-- `README.md`
-- `assets/`
-  - 20 imágenes de posters
-  - `frame_poster_qr.png`
-  - paredes de referencia:
-    - `wall_blue.png`
-    - `wall_white.png`
-    - `wall_brown.png`
-    - `wall_black.png`
+## Main Features
 
-## Cambios principales
+- Editorial-style landing page
+- Curated product catalog
+- Product filtering by category
+- Poster preview with frame and wall options
+- Shopping cart with quantities and totals
+- Mercado Pago Checkout Pro integration
+- Customer name and email capture before checkout
+- Styled purchase receipt for the customer
+- Styled new-order notification for the store owner
+- Success, pending, and failure payment pages
+- Terms and privacy pages
+- Responsive layout for desktop and mobile
 
-- Ya no se usan imágenes PNG de marcos.
-- Los marcos son CSS/HTML con esquinas rectas, grosor, profundidad, sombra y margen tipo paspartú.
-- Marcos disponibles: Café, Negro y Beige.
-- Paredes disponibles: Azul, Blanco, Café y Negro.
-- El preview muestra el poster dentro del marco sobre una pared real.
-- Las especificaciones usan: 48 cm x 60 cm, Impresión premium y Marco incluido.
-- El carrito guarda el marco seleccionado.
+## Tech Stack
 
-## Instrucciones
+- HTML
+- CSS
+- JavaScript
+- Vercel Serverless Functions
+- Mercado Pago Checkout Pro
+- Resend Email API
 
-1. Sube todo a GitHub.
-2. Reemplaza archivos anteriores.
-3. Haz commit.
-4. Espera el despliegue automático en Vercel.
-5. Prueba carrito.
-6. Prueba selector de marco.
-7. Prueba selector de pared.
-8. Prueba preview.
-9. Prueba WhatsApp, Instagram y QR.
-10. Prueba términos y privacidad.
-
-## Receipt Email Setup
-
-This version includes a post-purchase receipt flow:
-
-- The customer enters name and email before checkout.
-- After a successful Mercado Pago payment, the success page calls `/api/send-receipt`.
-- The customer receives a styled purchase receipt.
-- The store owner receives a styled new-order notification.
-
-Required Vercel environment variables:
+## Required Vercel Environment Variables
 
 ```txt
 MP_ACCESS_TOKEN=your_mercado_pago_production_access_token
@@ -60,4 +37,10 @@ STORE_EMAIL=your_store_email@example.com
 RECEIPT_FROM=FRAME POSTER <onboarding@resend.dev>
 ```
 
-For a production sender, replace `RECEIPT_FROM` with a verified domain sender in Resend.
+## Project Status
+
+This version is ready to be uploaded to GitHub and deployed through Vercel. Test products were removed from the public catalog, so the store now shows only the final FRAME POSTER catalog.
+
+## Notes
+
+For production email sending, use a verified sender/domain in Resend instead of the default onboarding sender.

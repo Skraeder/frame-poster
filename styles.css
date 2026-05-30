@@ -191,7 +191,7 @@ h3 { letter-spacing: -.04em; line-height: 1.08; }
 .qty-control { display: inline-flex; align-items: center; gap: 8px; }
 .qty-btn { width: 34px; height: 34px; padding: 0; }
 .cart-summary { border-top: 1px solid var(--line); padding-top: 16px; display: grid; gap: 10px; }
-.cart-summary div { display: flex; justify-content: space-between; gap: 12px; }
+.cart-summary > div:not(.buyer-form) { display: flex; justify-content: space-between; gap: 12px; }
 .frame-note { color: var(--accent-dark); font-weight: 850; margin: 0 0 6px; }
 .total-row { font-size: 1.25rem; }
 .checkout-button { border: 0; border-radius: 999px; background: var(--ink); color: white; padding: 14px 18px; font-weight: 900; }
@@ -236,50 +236,75 @@ h3 { letter-spacing: -.04em; line-height: 1.08; }
 @media (max-width: 420px) { .hero-actions, .filter-bar, .contact-actions { flex-direction: column; } .btn, .filter-btn { width: 100%; text-align: center; justify-content: center; } .poster-card-large { width: 196px; } .top-card { top: 36px; } .bottom-card { bottom: 38px; } .preview-button-row { gap: 6px; } .preview-frame-btn, .preview-wall-btn { padding: 9px 11px; } }
 
 /* Buyer receipt fields */
-.buyer-form {
+.cart-summary .buyer-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
   margin: 18px 0 16px;
-  padding: 16px;
+  padding: 18px;
   border: 1px solid rgba(17, 17, 17, 0.12);
-  border-radius: 18px;
-  background: #fbfaf7;
+  border-radius: 22px;
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 10px 28px rgba(17,17,17,.05);
 }
 
 .buyer-form-title {
-  margin: 0 0 12px;
-  font-weight: 700;
+  margin: 0 0 4px;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 900;
   color: #111111;
 }
 
 .buyer-form label {
   display: block;
-  margin: 10px 0 6px;
-  font-size: 0.82rem;
-  letter-spacing: 0.04em;
+  margin: 4px 0 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #5f5a52;
+  color: #6f6860;
+  font-weight: 850;
 }
 
 .buyer-form input {
+  display: block;
   width: 100%;
+  min-height: 48px;
   box-sizing: border-box;
   border: 1px solid rgba(17, 17, 17, 0.18);
-  border-radius: 12px;
-  padding: 12px 13px;
+  border-radius: 14px;
+  padding: 13px 14px;
   font: inherit;
   background: #ffffff;
   color: #111111;
   outline: none;
 }
 
+.buyer-form input::placeholder {
+  color: #9a9289;
+}
+
 .buyer-form input:focus {
   border-color: #111111;
+  box-shadow: 0 0 0 3px rgba(17,17,17,.08);
 }
 
 .buyer-form-note {
-  margin: 10px 0 0;
+  margin: 4px 0 0;
   font-size: 0.82rem;
   line-height: 1.45;
   color: #6f6860;
+}
+
+@media (max-width: 760px) {
+  .cart-summary .buyer-form {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .buyer-form-title {
+    font-size: .98rem;
+  }
 }
 
 .receipt-status-box {

@@ -15,3 +15,9 @@ Actualización Mercado Pago:
 - Precios actualizados: posters normales $799 MXN y edición limitada $869 MXN.
 - Checkout conectado a /api/create-preference.js para Mercado Pago Checkout Pro.
 - Se agregaron páginas success.html, failure.html y pending.html.
+
+
+Final cleanup:
+- Removed temporary Mercado Pago test products.
+- Removed temporary payment test category from catalog filters.
+- Kept Mercado Pago Checkout Pro and Resend receipt email integration.
