@@ -42,7 +42,12 @@ export default async function handler(req, res) {
         pending: `${origin}/pending.html`
       },
       auto_return: "approved",
-      statement_descriptor: "FRAME POSTER"
+      statement_descriptor: "FRAME POSTER",
+      payment_methods: {
+        excluded_payment_methods: [],
+        excluded_payment_types: [],
+        installments: 12
+      }
     };
 
     const response = await fetch("https://api.mercadopago.com/checkout/preferences", {
