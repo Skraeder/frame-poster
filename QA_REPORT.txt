@@ -30,3 +30,5 @@ Update: Gmail receipt version adjusted. Cart drawer now scrolls on small screens
 - Added success URL order_token fallback so receipt can reconstruct order details even if localStorage is lost after Mercado Pago redirect.
 - Added precheckout internal backup email to STORE_EMAIL with poster, customer and delivery details before redirecting to Mercado Pago.
 - Added mobile cart usability patch to keep checkout button accessible without zooming.
+
+- Updated receipt email layout to clearly label Poster comprado, Colección, Marco seleccionado, Cantidad and Precio unitario.
