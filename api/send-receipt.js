@@ -147,7 +147,7 @@ function baseEmail({ title, subtitle, order, payment, intro, storeView = false }
 </html>`;
 }
 
-async function sendEmail({ to, subject, html }) {
+async function sendEmail({ to, subject, html, replyTo }) {
   const gmailUser = process.env.GMAIL_USER;
   const gmailPassword = String(process.env.GMAIL_APP_PASSWORD || "").replace(/\s/g, "");
 
@@ -169,7 +169,8 @@ async function sendEmail({ to, subject, html }) {
     from: `FRAME POSTER <${gmailUser}>`,
     to,
     subject,
-    html
+    html,
+    ...(replyTo ? { replyTo } : {})
   });
 }
 
@@ -179,16 +180,18 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { order, payment } = req.body || {};
+    const { order, payment, mode = "confirmed" } = req.body || {};
     const storeEmail = process.env.STORE_EMAIL || process.env.GMAIL_USER;
 
-    if (!order?.customer?.email || !Array.isArray(order.cart) || order.cart.length === 0) {
-      return res.status(400).json({ error: "Missing order data" });
+    if (!order?.customer?.email || !/^\S+@\S+\.\S+$/.test(order.customer.email) || !Array.isArray(order.cart) || order.cart.length === 0) {
+      return res.status(400).json({ error: "Missing or invalid order data" });
     }
 
     if (!storeEmail) {
       return res.status(500).json({ error: "Missing STORE_EMAIL" });
     }
+
+    const isBackup = mode === "precheckout";
 
     const customerHtml = baseEmail({
       title: "Gracias por tu compra",
@@ -200,30 +203,70 @@ export default async function handler(req, res) {
     });
 
     const storeHtml = baseEmail({
-      title: "Nueva venta recibida",
-      subtitle: "Un cliente completó una compra en FRAME POSTER.",
-      intro: "Se confirmó una nueva orden. Revisa los detalles para preparar el pedido y coordinar la entrega.",
+      title: isBackup ? "Pedido iniciado" : "Nueva venta recibida",
+      subtitle: isBackup ? "Un cliente inició el pago en FRAME POSTER." : "Un cliente completó una compra en FRAME POSTER.",
+      intro: isBackup
+        ? "Este correo es un respaldo del pedido antes de Mercado Pago. Úsalo para ver poster, dirección y contacto; confirma el cobro con el correo de Mercado Pago."
+        : "Se confirmó una nueva orden. Revisa los detalles para preparar el pedido y coordinar la entrega.",
       order,
       payment: payment || {},
       storeView: true
     });
 
-    const customerResult = await sendEmail({
-      to: order.customer.email,
-      subject: `Tu pedido FRAME POSTER está confirmado · ${order.orderId || "Orden"}`,
-      html: customerHtml
-    });
+    if (isBackup) {
+      const storeResult = await sendEmail({
+        to: storeEmail,
+        subject: `Pedido iniciado FRAME POSTER · ${order.orderId || "Orden"}`,
+        html: storeHtml,
+        replyTo: order.customer.email
+      });
 
-    const storeResult = await sendEmail({
-      to: storeEmail,
-      subject: `Nueva venta FRAME POSTER · ${order.orderId || "Orden"}`,
-      html: storeHtml
-    });
+      return res.status(200).json({
+        ok: true,
+        mode,
+        storeSent: true,
+        customerSent: false,
+        storeMessageId: storeResult.messageId,
+        customerMessageId: null
+      });
+    }
+
+    const [storeResult, customerResult] = await Promise.allSettled([
+      sendEmail({
+        to: storeEmail,
+        subject: `Nueva venta FRAME POSTER · ${order.orderId || "Orden"}`,
+        html: storeHtml,
+        replyTo: order.customer.email
+      }),
+      sendEmail({
+        to: order.customer.email,
+        subject: `Tu pedido FRAME POSTER está confirmado · ${order.orderId || "Orden"}`,
+        html: customerHtml
+      })
+    ]);
+
+    const storeSent = storeResult.status === "fulfilled";
+    const customerSent = customerResult.status === "fulfilled";
+
+    if (!storeSent && !customerSent) {
+      const firstError = storeResult.reason || customerResult.reason;
+      return res.status(500).json({
+        ok: false,
+        error: "Receipt email error",
+        message: firstError?.message || "No emails could be sent"
+      });
+    }
 
     return res.status(200).json({
       ok: true,
-      customerMessageId: customerResult.messageId,
-      storeMessageId: storeResult.messageId
+      storeSent,
+      customerSent,
+      storeMessageId: storeSent ? storeResult.value.messageId : null,
+      customerMessageId: customerSent ? customerResult.value.messageId : null,
+      warnings: {
+        store: storeSent ? null : (storeResult.reason?.message || "Store email failed"),
+        customer: customerSent ? null : (customerResult.reason?.message || "Customer email failed")
+      }
     });
   } catch (error) {
     return res.status(500).json({ error: "Receipt email error", message: error.message });

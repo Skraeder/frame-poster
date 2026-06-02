@@ -54,6 +54,25 @@ export default async function handler(req, res) {
     const origin = req.headers.origin || `https://${req.headers.host}`;
     const total = cart.reduce((sum, item) => sum + Number(item.price || 0) * Number(item.quantity || 1), 0);
 
+    const order = {
+      orderId,
+      customer: cleanCustomer,
+      shipping: {
+        address: cleanCustomer.address,
+        city: cleanCustomer.city,
+        state: cleanCustomer.state,
+        zip: cleanCustomer.zip,
+        phone: cleanCustomer.phone
+      },
+      cart,
+      total,
+      createdAt: new Date().toISOString()
+    };
+
+    // Backup ligero: si Mercado Pago regresa desde app/navegador distinto,
+    // success.html todavía puede reconstruir el pedido y mandar el recibo.
+    const orderToken = Buffer.from(JSON.stringify(order)).toString("base64url");
+
     const preference = {
       items,
       payer: {
@@ -72,7 +91,7 @@ export default async function handler(req, res) {
         shipping_zip: cleanCustomer.zip
       },
       back_urls: {
-        success: `${origin}/success.html`,
+        success: `${origin}/success.html?order_token=${encodeURIComponent(orderToken)}`,
         failure: `${origin}/failure.html`,
         pending: `${origin}/pending.html`
       },
@@ -105,20 +124,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({
       checkoutUrl,
-      order: {
-        orderId,
-        customer: cleanCustomer,
-        shipping: {
-          address: cleanCustomer.address,
-          city: cleanCustomer.city,
-          state: cleanCustomer.state,
-          zip: cleanCustomer.zip,
-          phone: cleanCustomer.phone
-        },
-        cart,
-        total,
-        createdAt: new Date().toISOString()
-      }
+      order
     });
   } catch (error) {
     return res.status(500).json({

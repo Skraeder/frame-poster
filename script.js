@@ -65,6 +65,30 @@ function updatePreviewVisual() { if (mockupFrame) { mockupFrame.classList.remove
 function openPreview(product) { currentPreviewProduct = product; if (previewImage) { previewImage.src = product.image; previewImage.alt = product.name; } if (previewTitle) previewTitle.textContent = product.name; if (previewPrice) previewPrice.textContent = formatMXN(product.price); updatePreviewVisual(); if (previewModal) { previewModal.classList.add("is-open"); previewModal.setAttribute("aria-hidden", "false"); document.body.classList.add("modal-open"); } trackEvent(`preview:${product.name}:${selectedFrame.name}:${selectedWall.name}`); }
 function closePreview() { if (previewModal) { previewModal.classList.remove("is-open"); previewModal.setAttribute("aria-hidden", "true"); document.body.classList.remove("modal-open"); } }
 
+async function sendOrderBackup(order) {
+  try {
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 4500);
+    await fetch("/api/send-receipt", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      signal: controller.signal,
+      body: JSON.stringify({
+        mode: "precheckout",
+        order,
+        payment: {
+          paymentId: "Pendiente de Mercado Pago",
+          status: "pending_checkout",
+          source: "Pedido iniciado antes del pago"
+        }
+      })
+    });
+    window.clearTimeout(timeout);
+  } catch (error) {
+    console.warn("No se pudo enviar el respaldo del pedido antes del pago:", error);
+  }
+}
+
 if (mobileMenuButton) { mobileMenuButton.addEventListener("click", () => { const isOpen = navMenu.classList.toggle("is-open"); document.body.classList.toggle("menu-open", isOpen); mobileMenuButton.setAttribute("aria-expanded", String(isOpen)); }); }
 document.querySelectorAll('a[href="#inicio"]').forEach((link) => {
   link.addEventListener("click", (event) => {
@@ -107,8 +131,8 @@ if (checkoutButton) {
       zip: buyerZipInput ? buyerZipInput.value.trim() : ""
     };
 
-    if (!customer.name || !customer.email || !customer.email.includes("@")) {
-      showToast("Agrega tu nombre y correo para enviar el recibo.");
+    if (!customer.name || !/^\S+@\S+\.\S+$/.test(customer.email)) {
+      showToast("Agrega un nombre y un correo válido para enviar el recibo.");
       if (!customer.name && buyerNameInput) buyerNameInput.focus();
       else if (buyerEmailInput) buyerEmailInput.focus();
       return;
@@ -144,6 +168,8 @@ if (checkoutButton) {
 
       if (data.order) {
         localStorage.setItem("framePosterPendingOrder", JSON.stringify(data.order));
+        sessionStorage.setItem("framePosterPendingOrder", JSON.stringify(data.order));
+        await sendOrderBackup(data.order);
       }
 
       trackEvent("checkout_mercado_pago");

@@ -21,3 +21,12 @@ Final cleanup:
 - Removed temporary Mercado Pago test products.
 - Removed temporary payment test category from catalog filters.
 - Kept Mercado Pago Checkout Pro and Resend receipt email integration.
+
+
+Update: Gmail receipt version adjusted. Cart drawer now scrolls on small screens, receipt fields are single-column for readability, and store notification attempts even if customer email fails.
+
+
+2026-06-02 Patch:
+- Added success URL order_token fallback so receipt can reconstruct order details even if localStorage is lost after Mercado Pago redirect.
+- Added precheckout internal backup email to STORE_EMAIL with poster, customer and delivery details before redirecting to Mercado Pago.
+- Added mobile cart usability patch to keep checkout button accessible without zooming.
