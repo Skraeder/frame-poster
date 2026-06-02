@@ -19,11 +19,19 @@ export default async function handler(req, res) {
     const cleanCustomer = {
       name: String(customer?.name || "").trim(),
       email: String(customer?.email || "").trim().toLowerCase(),
-      phone: String(customer?.phone || "").trim()
+      phone: String(customer?.phone || "").trim(),
+      address: String(customer?.address || "").trim(),
+      city: String(customer?.city || "").trim(),
+      state: String(customer?.state || "").trim(),
+      zip: String(customer?.zip || "").trim()
     };
 
     if (!cleanCustomer.name || !cleanCustomer.email || !cleanCustomer.email.includes("@")) {
       return res.status(400).json({ error: "Customer name and email are required" });
+    }
+
+    if (!cleanCustomer.address || !cleanCustomer.city || !cleanCustomer.state || !cleanCustomer.zip) {
+      return res.status(400).json({ error: "Shipping address is required" });
     }
 
     const items = cart.map((item) => {
@@ -44,6 +52,7 @@ export default async function handler(req, res) {
 
     const orderId = `FP-${Date.now().toString(36).toUpperCase()}`;
     const origin = req.headers.origin || `https://${req.headers.host}`;
+    const total = cart.reduce((sum, item) => sum + Number(item.price || 0) * Number(item.quantity || 1), 0);
 
     const preference = {
       items,
@@ -55,7 +64,12 @@ export default async function handler(req, res) {
       metadata: {
         order_id: orderId,
         customer_name: cleanCustomer.name,
-        customer_email: cleanCustomer.email
+        customer_email: cleanCustomer.email,
+        customer_phone: cleanCustomer.phone,
+        shipping_address: cleanCustomer.address,
+        shipping_city: cleanCustomer.city,
+        shipping_state: cleanCustomer.state,
+        shipping_zip: cleanCustomer.zip
       },
       back_urls: {
         success: `${origin}/success.html`,
@@ -94,8 +108,15 @@ export default async function handler(req, res) {
       order: {
         orderId,
         customer: cleanCustomer,
+        shipping: {
+          address: cleanCustomer.address,
+          city: cleanCustomer.city,
+          state: cleanCustomer.state,
+          zip: cleanCustomer.zip,
+          phone: cleanCustomer.phone
+        },
         cart,
-        total: cart.reduce((sum, item) => sum + Number(item.price || 0) * Number(item.quantity || 1), 0),
+        total,
         createdAt: new Date().toISOString()
       }
     });

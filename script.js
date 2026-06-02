@@ -23,6 +23,11 @@ const cartTotal = document.getElementById("cartTotal");
 const checkoutButton = document.getElementById("checkoutButton");
 const buyerNameInput = document.getElementById("buyerName");
 const buyerEmailInput = document.getElementById("buyerEmail");
+const buyerPhoneInput = document.getElementById("buyerPhone");
+const buyerAddressInput = document.getElementById("buyerAddress");
+const buyerCityInput = document.getElementById("buyerCity");
+const buyerStateInput = document.getElementById("buyerState");
+const buyerZipInput = document.getElementById("buyerZip");
 
 const frameOptions = document.querySelectorAll(".frame-option");
 const previewModal = document.getElementById("previewModal");
@@ -94,13 +99,27 @@ if (checkoutButton) {
 
     const customer = {
       name: buyerNameInput ? buyerNameInput.value.trim() : "",
-      email: buyerEmailInput ? buyerEmailInput.value.trim().toLowerCase() : ""
+      email: buyerEmailInput ? buyerEmailInput.value.trim().toLowerCase() : "",
+      phone: buyerPhoneInput ? buyerPhoneInput.value.trim() : "",
+      address: buyerAddressInput ? buyerAddressInput.value.trim() : "",
+      city: buyerCityInput ? buyerCityInput.value.trim() : "",
+      state: buyerStateInput ? buyerStateInput.value.trim() : "",
+      zip: buyerZipInput ? buyerZipInput.value.trim() : ""
     };
 
     if (!customer.name || !customer.email || !customer.email.includes("@")) {
       showToast("Agrega tu nombre y correo para enviar el recibo.");
       if (!customer.name && buyerNameInput) buyerNameInput.focus();
       else if (buyerEmailInput) buyerEmailInput.focus();
+      return;
+    }
+
+    if (!customer.address || !customer.city || !customer.state || !customer.zip) {
+      showToast("Agrega la dirección completa para preparar la entrega.");
+      if (!customer.address && buyerAddressInput) buyerAddressInput.focus();
+      else if (!customer.city && buyerCityInput) buyerCityInput.focus();
+      else if (!customer.state && buyerStateInput) buyerStateInput.focus();
+      else if (buyerZipInput) buyerZipInput.focus();
       return;
     }
 

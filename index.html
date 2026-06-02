@@ -848,13 +848,32 @@
       <div><span>Envío</span><strong>Gratis</strong></div>
       <div class="total-row"><span>Total</span><strong id="cartTotal">$0 MXN</strong></div>
 
-      <div class="buyer-form" aria-label="Datos para recibo de compra">
-        <p class="buyer-form-title">Datos para enviar tu recibo</p>
-        <label for="buyerName">Nombre completo</label>
-        <input type="text" id="buyerName" name="buyerName" autocomplete="name" placeholder="Ej. Ana López">
-        <label for="buyerEmail">Correo electrónico</label>
-        <input type="email" id="buyerEmail" name="buyerEmail" autocomplete="email" placeholder="cliente@email.com">
-        <p class="buyer-form-note">Usaremos estos datos para enviar la confirmación de compra.</p>
+      <div class="buyer-form" aria-label="Datos para recibo y entrega de compra">
+        <p class="buyer-form-title">Datos para recibo y entrega</p>
+        <div class="buyer-form-grid">
+          <label for="buyerName">Nombre completo
+            <input type="text" id="buyerName" name="buyerName" autocomplete="name" placeholder="Ej. Ana López">
+          </label>
+          <label for="buyerEmail">Correo electrónico
+            <input type="email" id="buyerEmail" name="buyerEmail" autocomplete="email" placeholder="cliente@email.com">
+          </label>
+          <label for="buyerPhone">Teléfono
+            <input type="tel" id="buyerPhone" name="buyerPhone" autocomplete="tel" placeholder="55 1234 5678">
+          </label>
+          <label for="buyerZip">Código postal
+            <input type="text" id="buyerZip" name="buyerZip" autocomplete="postal-code" placeholder="01234">
+          </label>
+          <label for="buyerAddress" class="buyer-field-full">Dirección de entrega
+            <input type="text" id="buyerAddress" name="buyerAddress" autocomplete="street-address" placeholder="Calle, número, colonia">
+          </label>
+          <label for="buyerCity">Ciudad / Alcaldía
+            <input type="text" id="buyerCity" name="buyerCity" autocomplete="address-level2" placeholder="Ej. CDMX">
+          </label>
+          <label for="buyerState">Estado
+            <input type="text" id="buyerState" name="buyerState" autocomplete="address-level1" placeholder="Ej. Ciudad de México">
+          </label>
+        </div>
+        <p class="buyer-form-note">Usaremos estos datos para enviar tu recibo y preparar la entrega del pedido.</p>
       </div>
 
       <!-- Botón conectado a Mercado Pago Checkout Pro -->
