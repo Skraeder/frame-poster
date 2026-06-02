@@ -17,38 +17,19 @@ function renderItems(cart) {
   return cart.map((item) => {
     const quantity = Number(item.quantity || 1);
     const price = Number(item.price || 0);
-    const subtotal = price * quantity;
-    const category = item.category || "Poster";
     return `
       <tr>
-        <td style="padding:18px 0;border-bottom:1px solid #e8e1d8;">
-          <div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#8f1f19;font-weight:700;margin-bottom:8px;">Poster comprado</div>
-          <strong style="display:block;font-size:18px;line-height:1.35;color:#111111;margin-bottom:8px;">${escapeHtml(item.name)}</strong>
-          <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="margin-top:8px;">
-            <tr>
-              <td style="font-size:13px;color:#6b625a;padding:3px 0;">Colección</td>
-              <td align="right" style="font-size:13px;color:#111111;padding:3px 0;font-weight:600;">${escapeHtml(category)}</td>
-            </tr>
-            <tr>
-              <td style="font-size:13px;color:#6b625a;padding:3px 0;">Marco seleccionado</td>
-              <td align="right" style="font-size:13px;color:#111111;padding:3px 0;font-weight:600;">${escapeHtml(item.frame || "Negro")}</td>
-            </tr>
-            <tr>
-              <td style="font-size:13px;color:#6b625a;padding:3px 0;">Cantidad</td>
-              <td align="right" style="font-size:13px;color:#111111;padding:3px 0;font-weight:600;">${quantity}</td>
-            </tr>
-            <tr>
-              <td style="font-size:13px;color:#6b625a;padding:3px 0;">Precio unitario</td>
-              <td align="right" style="font-size:13px;color:#111111;padding:3px 0;font-weight:600;">${formatMXN(price)}</td>
-            </tr>
-          </table>
+        <td style="padding:16px 0;border-bottom:1px solid #e8e1d8;">
+          <strong style="font-size:15px;color:#111111;">${escapeHtml(item.name)}</strong><br>
+          <span style="font-size:13px;color:#6b625a;">Marco: ${escapeHtml(item.frame || "Negro")} · Cantidad: ${quantity}</span>
         </td>
-        <td align="right" style="padding:18px 0;border-bottom:1px solid #e8e1d8;font-size:17px;color:#111111;font-weight:700;white-space:nowrap;vertical-align:top;">
-          ${formatMXN(subtotal)}
+        <td align="right" style="padding:16px 0;border-bottom:1px solid #e8e1d8;font-size:15px;color:#111111;white-space:nowrap;">
+          ${formatMXN(price * quantity)}
         </td>
       </tr>`;
   }).join("");
 }
+
 function renderShipping(order) {
   const shipping = order.shipping || order.customer || {};
   const address = [shipping.address, shipping.city, shipping.state, shipping.zip].filter(Boolean).join(", ");
